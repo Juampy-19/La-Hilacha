@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde: rgb(35, 155, 86);
+    --transpVerde: rgba(35, 135, 86, .2);
+    --blanco: white;
+    --transpNegro: rgba(0, 0, 0, .8);
+    --rojo: rgb(223, 32, 32);
+}
+
+body {
+    background-image: url('../img/pizza-4812083_1280.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+main {
+    color: var(--verde);
+    font-family: 'Open Sans', sans-serif;
+    padding: 1%;
+    padding-top: 250px;
+}
+
+@media (max-width: 424px) {
+
+}
+
+@media (min-width: 425px) {
+
+}
+
+@media (min-width: 768px) {
+    
+}
