@@ -1,0 +1,331 @@
+{
+    "products": [
+        {
+            "pizzas": [
+                {
+                    "categoría": [
+                        {
+                            "eternas": [
+                                {
+                                    "gustos": [
+                                        {
+                                            "sabor": "Muzzarella",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Anchoa",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Pizzaiola",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Fugazza",
+                                            "ingredientes": ""
+                                        }
+                                    ],
+                                    "tamaño":[
+                                        {
+                                            "tamaño": "chica",
+                                            "precio": 950
+                                        },
+                                        {
+                                            "tamaño": "grande",
+                                            "precio": 1100
+                                        },
+                                        {
+                                            "tamaño": "gigante",
+                                            "precio": 1400
+                                        }
+                                    ]
+                                }
+                            ],
+                            "clasicas": [
+                                {
+                                    "gustos": [
+                                        {
+                                            "sabor": "Muzzarella al pesto",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Muzzarella con anchoas",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Napolitana",
+                                            "ingredientes": "muzza, tomate, ajo, morrón y perejil"
+                                        },
+                                        {
+                                            "sabor": "Calabresa",
+                                            "ingredientes": "muzza, longaniza y morrón"
+                                        },
+                                        {
+                                            "sabor": "Jamón",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Provolone",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Palmitos",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Panceta",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Fugazzeta",
+                                            "ingredientes": "muzza, cebolla y provolone"
+                                        },
+                                        {
+                                            "sabor": "Caprese",
+                                            "ingredientes": "muzza, tomate y albahaca"
+                                        }
+                                    ],
+                                    "tamaño": [
+                                        {
+                                            "tamaño": "chica",
+                                            "precio": 1200
+                                        },
+                                        {
+                                            "tamaño": "grande",
+                                            "precio": 1400
+                                        },
+                                        {
+                                            "tamaño": "gigante",
+                                            "precio": 1800
+                                        }
+                                    ]
+                                }
+                            ],
+                            "tradicionales": [
+                                {
+                                    "gustos": [
+                                        {
+                                            "sabor": "Jamón y morrones",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Jamón y ananá",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Jamón y huevo",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Jamón y roquefort",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Jamón y palmitos",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Fugazzeta y jamón",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Fugazzeta de la casa",
+                                            "ingredientes": "muzza, cebolla, fugazzeta y panceta"
+                                        },
+                                        {
+                                            "sabor": "Vegetariana",
+                                            "ingredientes": "muzza, acelga, salsa blanca y provolone"
+                                        },
+                                        {
+                                            "sabor": "7 colores",
+                                            "ingredientes": "muzza, huevo, rollitos de jamón, morrón y ají en vinagre"
+                                        }
+                                    ],
+                                    "tamaño": [
+                                        {
+                                            "tamaño": "chica",
+                                            "precio": 1350
+                                        },
+                                        {
+                                            "tamaño": "grande",
+                                            "precio": 1600
+                                        },
+                                        {
+                                            "tamaño": "gigante",
+                                            "precio": 2000
+                                        }
+                                    ]
+                                }
+                            ],
+                            "especiales": [
+                                {
+                                    "gustos": [
+                                        {
+                                            "sabor": "Jamón y provolone",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Cuatro quesos",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Jamón crudo y rúcula",
+                                            "ingredientes": ""
+                                        },
+                                        {
+                                            "sabor": "Napolitana especial",
+                                            "ingredientes": "muzza, jamón, tomate, ajo, morrón, provolone y perejil"
+                                        },
+                                        {
+                                            "sabor": "Calabreza especial",
+                                            "ingredientes": "muzza, tomate, longaniza, rollitos de jamón y morrón"
+                                        },
+                                        {
+                                            "sabor": "Gran fachada",
+                                            "ingredientes": "muzza, tomate, huevo, rollitos de jamón y provolone"
+                                        },
+                                        {
+                                            "sabor": "Gran hilacha",
+                                            "ingredientes": "muzza, rollitos de jamón, palmitos, ananá y morrón"
+                                        },
+                                        {
+                                            "sabor": "Genovesa",
+                                            "ingredientes": "muzza, tomate, palmitos, rollitos de jamón y provolone"
+                                        },
+                                        {
+                                            "sabor": "Salerno",
+                                            "ingredientes": "muzza, cebolla, roquefort y panceta"
+                                        },
+                                        {
+                                            "sabor": "Americana",
+                                            "ingredientes": "muzza, tomate, huevo, rollitos de jamón, papas y ketchup"
+                                        }
+                                    ],
+                                    "tamaño": [
+                                        {
+                                            "tamaño": "chica",
+                                            "precio": 1500
+                                        },
+                                        {
+                                            "tamaño": "grande",
+                                            "precio": 1800
+                                        },
+                                        {
+                                            "tamaño": "gigante",
+                                            "precio": 2200
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "empanadas": [
+                {
+                    "categoría": [
+                        {
+                            "tradicionales": [
+                                {
+                                    "sabor": [
+                                        {
+                                            "sabor": "Carne a cuchillo"
+                                        },
+                                        {
+                                            "sabor": "Carne a cuchillo picante"
+                                        },
+                                        {
+                                            "sabor": "Carne a cuchillo con pasas"
+                                        },
+                                        {
+                                            "sabor": "Tucumana"
+                                        },
+                                        {
+                                            "sabor": "Pollo al verdeo con salsa blanca"
+                                        },
+                                        {
+                                            "sabor": "Humita"
+                                        },
+                                        {
+                                            "sabor": "Verdura"
+                                        }
+                                    ],
+                                    "precio": 190
+                                }
+                            ],
+                            "abierta": [
+                                {
+                                    "sabor": [
+                                        {
+                                            "sabor": "Jamón y queso"
+                                        },
+                                        {
+                                            "sabor": "Caprese"
+                                        },
+                                        {
+                                            "sabor": "Cebolla y queso"
+                                        },
+                                        {
+                                            "sabor": "4 quesos"
+                                        },
+                                        {
+                                            "sabor": "Panceta"
+                                        },
+                                        {
+                                            "sabor": "Panceta y ciruela"
+                                        },
+                                        {
+                                            "sabor": "Calabreza"
+                                        },
+                                        {
+                                            "sabor": "Jamón, queso y Roquefort"
+                                        },
+                                        {
+                                            "sabor": "jamón, queso y morrón"
+                                        },
+                                        {
+                                            "sabor": "Jamón, queso y provolone"
+                                        },
+                                        {
+                                            "sabor": "Jamón,queso y palmitos"
+                                        },
+                                        {
+                                            "sabor": "Jamón, queso y ananá"
+                                        },
+                                        {
+                                            "sabor": "Jamón, queso y huevo"
+                                        }
+                                    ],
+                                    "precio": 190
+                                }
+                            ],
+                            "premium": [
+                                {
+                                    "sabor": [
+                                        {
+                                            "sabor": "Lomo ahumado",
+                                            "ingredientes": "bola de lomo ahumada, aceitunas y huevo"
+                                        },
+                                        {
+                                            "sabor": "Bondiola",
+                                            "ingredientes": "desmechada con salsa barbacoa"
+                                        },
+                                        {
+                                            "sabor": "Ratatouille",
+                                            "ingredientes": "berenjenas, zapallito, cherri, morrón y espinaca"
+                                        },
+                                        {
+                                            "sabor": "Champigñones",
+                                            "ingredientes": "panceta, verdeo, queso y champigñones"
+                                        }
+                                    ],
+                                    "precio": 210
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }        
+    ]
+}
