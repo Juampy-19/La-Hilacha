@@ -1,0 +1,65 @@
+.contButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.burgerMenu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    margin-top: 5px;
+}
+
+.button {
+    background-color: var(--verde); /* color de fondo */
+    border: none; /* sin borde */
+    color: var(--blanco); /* color del texto */
+    padding: 12px 12px; /* espacio interno (arriba y abajo, izquierda y derecha) */
+    text-align: center; /* centrar texto */
+    text-decoration: none; /* sin decoración de texto */
+    display: inline-block; /* mostrar como elemento de bloque */
+    font-size: 16px; /* tamaño de fuente */
+    cursor: pointer; /* cursor al pasar por encima */
+    border-radius: 20px; /* bordes redondeados */
+    font-family: 'Merriweather', serif;
+
+    transition: background-color 0.5s ease;
+}
+
+.button:hover{
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+
+.buttonToTop {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.scrollToTop {
+    background-color: var(--verde);
+    border: none;
+    color: var(--blanco);
+    padding: 12px 12px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: 'Merriweather', serif;
+    transition: background-color 0.5s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9;
+}
+
+.scrollToTop:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}

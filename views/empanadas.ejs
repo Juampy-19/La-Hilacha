@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+
+    <%- include('./partials/head.ejs') %>
+
 <body>
-    <h1>vista de empanadas</h1>
+
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+        <div class="contButton">
+            <a href="/"><button class="button">Home</button></a>
+            <a href="/pizzas"><button class="button">Pizzas</button></a>
+            <a href="/formDatos"><button class="button">Pedí</button></a>
+        </div>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+
 </body>
 </html>
