@@ -28,12 +28,12 @@ module.exports = (sequelize, dataTypes) => {
       foreignKey: 'producto_id'
     })
 
-    Empanada.hasMany(models.CategoriaEmpanada, {
+    Empanada.belongsTo(models.CategoriaEmpanada, {
       as: 'CategoriaEmpanada',
       foreignKey: 'categoria_empanada_id'
     })
 
-    Empanada.belongsTo(models.PrecioEmpanada, {
+    Empanada.hasOne(models.PrecioEmpanada, {
       as: 'PrecioEmpanada',
       foreignKey: 'categoria_empanada_id'
     })

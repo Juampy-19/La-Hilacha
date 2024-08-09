@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
   const CategoriaEmpanada = sequelize.define(alias, cols, config)
 
   CategoriaEmpanada.associate = function (models) {
-    CategoriaEmpanada.belongsTo(models.Empanada, {
+    CategoriaEmpanada.hasMany(models.Empanada, {
       as: 'Empanada',
       foreignKey: 'categoria_empanada_id'
     })
