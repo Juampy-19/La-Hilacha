@@ -13,27 +13,34 @@
 }
 
 body {
-    background-image: url('../img/pizza-4812083_1280.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-color: black;
 }
 
 main {
     color: var(--verde);
     font-family: 'Open Sans', sans-serif;
     padding: 1%;
-    padding-top: 250px;
+    padding-top: 350px;
 }
 
-@media (max-width: 424px) {
-
-}
-
-@media (min-width: 425px) {
-
-}
-
-@media (min-width: 768px) {
+@media (min-width: 425px) {   
+    body {
+        background-image: url('../img/pizza-2589577_1280.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
     
+    main {
+        padding-top: 18%;
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        background-image: url('../img/pizza-4812083_1280.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
 }
