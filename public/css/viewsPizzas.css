@@ -1,0 +1,76 @@
+.pizzas {
+    display: grid;
+    width: 100%;
+    font-size: 22px;
+    border: 2px solid var(--verde);
+    outline: 5px solid var(--transpVerde);
+    border-radius: 8px;
+    background: var(--transpNegro);
+    padding: 2px;
+}
+
+.pizzas li {
+    list-style: none;
+    color: var(--blanco);
+}
+
+.pizzasEternas {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 20px;
+}
+
+.pizzasClasicas {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.pizzasTradicionales {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.pizzasEspeciales {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+
+    .pizzas {
+        width: 900px;
+        grid-template-columns: 1fr 1fr;
+        margin: 25px 50px 25px auto
+    }
+
+    .pizzasEternas {
+        grid-column: 1 / 2;
+    }
+
+    .pizzasClasicas {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .pizzasTradicionales {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .pizzasEspeciales {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+}

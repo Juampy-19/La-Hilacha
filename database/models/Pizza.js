@@ -43,11 +43,6 @@ module.exports = (sequelize, dataTypes) => {
       as: 'TamañoPizza',
       foreignKey: 'tamaño_id'
     })
-
-    Pizza.belongsTo(models.PrecioPizza, {
-      as: 'PrecioPizza',
-      foreignKey: 'precio_id'
-    })
   }
 
   return Pizza

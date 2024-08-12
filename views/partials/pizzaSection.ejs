@@ -1,0 +1,37 @@
+<div class="pizzas">
+    <section class="pizzasEternas">
+        <h2>Pizzas eternas</h2>
+        <ul>
+            <% eternas.forEach(pizza => { %>
+                <li><%= pizza.sabor %></li>
+            <% }) %>
+        </ul>
+    </section><br>
+
+    <section class="pizzasClasicas">
+        <h2>Pizzas clásicas</h2>
+        <ul>
+            <% clasicas.forEach(pizza => { %>
+                <li><%= pizza.sabor %></li>
+            <% }) %>
+        </ul>
+    </section><br>
+
+    <section class="pizzasTradicionales">
+        <h2>Pizzas tradicionales</h2>
+        <ul>
+            <% tradicionales.forEach(pizza => { %>
+                <li><%= pizza.sabor %></li>
+            <% }) %>
+        </ul>
+    </section><br>
+
+    <section class="pizzasEspeciales">
+        <h2>Pizzas especiales</h2>
+        <ul>
+            <% especiales.forEach(pizza => { %>
+                <li><%= pizza.sabor %></li>
+            <% }) %>
+        </ul>
+    </section><br>
+</div>
