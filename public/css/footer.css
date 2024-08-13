@@ -3,6 +3,7 @@ footer {
     color: var(--blanco);
     font-family: 'Merriweather', serif;
     display: flex;
+    flex-flow: column;
     align-items: center;
     justify-content: center;
     padding: 1.5%;
@@ -12,15 +13,17 @@ footer {
 
 .footerAddress {
     display: flex;
-    width: 30%;
+    width: 100%;
+    margin-bottom: 8px;
     flex-flow: column;
     align-items: center;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .payment {
     display: flex;
-    width: 30%;
+    width: 100%;
+    margin-bottom: 8px;
     flex-flow: column;
     align-items: center;
 }
@@ -32,39 +35,15 @@ footer {
 
 .footerLegend {
     display: flex;
-    width: 30%;
+    width: 100%;
+    margin-bottom: 8px;
     flex-flow: column;
     align-items: center;
 }
 
-@media (max-width: 424px) {
-    footer {
-        display: flex;
-        flex-flow: column;
-    }
-
-    .footerAddress {
-        display: flex;
-        width: 100%;
-        margin-bottom: 8px;
-    }
-
-    .payment {
-        display: flex;
-        width: 100%;
-        margin-bottom: 8px;
-    }
-    
-    .footerLegend {
-        display: flex;
-        width: 100%;
-        margin-bottom: 8px;
-    }
-}
-
 @media (min-width: 425px) {
     .footerAddress {
-        font-size: 26px;
+        font-size: 20px;
     }
 
     .footerLegend {
@@ -72,6 +51,21 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
-    
+@media (min-width: 769px) {
+    footer {
+        flex-flow: row;
+    }
+
+    .footerAddress {
+        width: 30%;
+        font-size: 16px;
+    }
+
+    .payment {
+        width: 30%;
+    }
+
+    .footerLegend {
+        width: 30%;
+    }
 }
