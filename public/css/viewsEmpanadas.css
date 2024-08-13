@@ -63,7 +63,7 @@
     }
 
     .empanadas {
-        width: 900px;
+        width: 70%;
         grid-template-columns: 1fr 1fr;
         margin: 25px 50px 25px auto;
     }
