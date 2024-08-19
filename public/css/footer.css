@@ -8,6 +8,7 @@ footer {
     justify-content: center;
     padding: 1.5%;
     width: 100%;
+    margin-top: auto;
 }
 
 .footerAddress {
@@ -41,10 +42,6 @@ footer {
 }
 
 @media (min-width: 425px) {
-    footer {
-        margin-top: auto;
-    }
-
     .footerAddress {
         font-size: 20px;
     }
