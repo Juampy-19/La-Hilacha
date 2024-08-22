@@ -7,6 +7,39 @@
     
     <%- include('./partials/header.ejs') %>
 
+    <main>
+        <div class="contButton">
+            <a href="/"><button class="button">Home</button></a>
+        </div>
+
+        <section class="formDatos">
+
+            <label class="name"> Nombre:
+                <input type="text" name="name" placeholder="Nombre" required>
+            </label>
+
+            <label class="phone"> Teléfono:
+                <input type="tel" name="phone" placeholder="Teléfono" pattern="[0-9]{9}" required>
+            </label>
+
+            <label class="address"> Dirección:
+                <input type="text" class="street" name="street" placeholder="Calle" required>
+                <input type="number" class="altura" name="altura" placeholder="Altura" required>
+                <input type="number" class="piso" name="piso" placeholder="Piso">
+                <input type="text" class="dpto" name="dpto" placeholder="Dpto">
+            </label>
+
+            <label class="message"> Mensaje:
+                <textarea name="message" cols="60" rows="2" placeholder="Mensaje"></textarea>
+            </label>
+
+            <div class="buttonContinuar">
+                <a href="/realizarPedido"><button class="button">Continuar</button></a>
+            </div>
+
+        </section>
+    </main>
+
     <%- include('./partials/footer.ejs') %>
 
 </body>
