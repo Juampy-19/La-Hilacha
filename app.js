@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const validationFormDatos = require('./middlewares/validationFormDatos.js')
 
 // Llamando a las rutas.
 const homeRoute = require('./routes/homeRouter.js')
@@ -9,6 +10,8 @@ const formDatosRouter = require('./routes/formDatosRouter.js')
 
 // Recursos estaticos.
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: false }))
+app.use(validationFormDatos)
 
 // Template engine.
 app.set('view engine', 'ejs')

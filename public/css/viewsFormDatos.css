@@ -78,4 +78,9 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
+    .textDangerError {
+        text-align: center;
+        color: #EA2828;
+    }
 }

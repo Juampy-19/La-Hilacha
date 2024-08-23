@@ -14,29 +14,52 @@
 
         <section class="formDatos">
 
-            <label class="name"> Nombre:
-                <input type="text" name="name" placeholder="Nombre" required>
-            </label>
+            <ul id="errorsFormDatos"></ul>
 
-            <label class="phone"> Teléfono:
-                <input type="tel" name="phone" placeholder="Teléfono" pattern="[0-9]{9}" required>
-            </label>
+            <form action="/formDatos" method="POST">
+                <label class="name"> Nombre:
+                    <input type="text" name="name" placeholder="Nombre" value="<%= locals.oldData && !locals.errors.name ? locals.oldData.name : '' %>">
+                </label>
+                <% if (locals.errors && errors.name) { %>
+                    <div class="textDangerError">
+                        <%= errors.name.msg %>
+                    </div>
+                <% } %>
 
-            <label class="address"> Dirección:
-                <input type="text" class="street" name="street" placeholder="Calle" required>
-                <input type="number" class="altura" name="altura" placeholder="Altura" required>
-                <input type="number" class="piso" name="piso" placeholder="Piso">
-                <input type="text" class="dpto" name="dpto" placeholder="Dpto">
-            </label>
+                <label class="phone"> Teléfono:
+                    <input type="tel" name="phone" placeholder="Teléfono" value="<%= locals.oldData && !locals.errors.phone ? locals.oldData.phone : '' %>">
+                </label>
+                <% if (locals.errors && errors.phone) { %>
+                    <div class="textDangerError">
+                        <%= errors.phone.msg %>
+                    </div>
+                <% } %>
 
-            <label class="message"> Mensaje:
-                <textarea name="message" cols="60" rows="2" placeholder="Mensaje"></textarea>
-            </label>
+                <label class="address"> Dirección:
+                    <input type="text" class="street" name="street" placeholder="Calle" value="<%= locals.oldData && !locals.errors.street ? locals.oldData.street : '' %>">
+                    <input type="text" class="altura" name="altura" placeholder="Altura" value="<%= locals.oldData && !locals.errors.altura ? locals.oldData.altura : '' %>">
+                    <input type="text" class="piso" name="piso" placeholder="Piso">
+                    <input type="text" class="dpto" name="dpto" placeholder="Dpto">
+                </label>
+                <% if (locals.errors && errors.street) { %>
+                    <div class="textDangerError">
+                        <%= errors.street.msg %>
+                    </div>
+                <% } %>
+                <% if (locals.errors && errors.altura) { %>
+                    <div class="textDangerError">
+                        <%= errors.altura.msg %>
+                    </div>
+                <% } %>
 
-            <div class="buttonContinuar">
-                <a href="/realizarPedido"><button class="button">Continuar</button></a>
-            </div>
+                <label class="message"> Mensaje:
+                    <textarea name="message" cols="60" rows="2" placeholder="Mensaje"></textarea>
+                </label>
 
+                <div class="buttonContinuar">
+                    <button class="button" type="submit">Continuar</button>
+                </div>
+            </form>
         </section>
     </main>
 
