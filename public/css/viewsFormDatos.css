@@ -6,14 +6,20 @@
     display: grid;
 }
 
+.textDangerError {
+    text-align: center;
+    color: #EA2828;
+}
+
 @media (min-width: 768px) {
     .formDatos {
-        width: 900px;
+        width: 70%;
+        margin: 30px auto;
+    }
+
+    .formDatos form {
+        margin: 10px 0;
         grid-template-columns: 1fr 1fr;
-        margin-left: auto;
-        margin-right: 50px;
-        margin-top: 40px;
-        margin-bottom: 40px;
         justify-items: center;
         text-align: center;
     }
@@ -73,14 +79,25 @@
         gap: 5px;
     }
 
+    .formDatos input {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid 2px var(--verde);
+        border-radius: 10px;
+    }
+
+    .formDatos textarea {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid 2px var(--verde);
+        border-radius: 10px;
+    }
+
     .buttonContinuar {
         grid-column: 1 / 3;
         margin-top: 10px;
         margin-bottom: 10px;
-    }
-
-    .textDangerError {
-        text-align: center;
-        color: #EA2828;
     }
 }

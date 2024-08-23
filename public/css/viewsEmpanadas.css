@@ -65,7 +65,7 @@
     .empanadas {
         width: 70%;
         grid-template-columns: 1fr 1fr;
-        margin: 25px 50px 25px auto;
+        margin: 25px auto;
     }
 
     .empanadas h2 {
