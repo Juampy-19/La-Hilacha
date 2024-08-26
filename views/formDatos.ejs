@@ -17,30 +17,35 @@
             <ul id="errorsFormDatos"></ul>
 
             <form action="/formDatos" method="POST">
-                <label class="name"> Nombre:
+                <div class="name">
+                    <label> Nombre:</label>
                     <input type="text" name="name" placeholder="Nombre" value="<%= locals.oldData && !locals.errors.name ? locals.oldData.name : '' %>">
-                </label>
+                </div>
                 <% if (locals.errors && errors.name) { %>
                     <div class="textDangerError">
                         <%= errors.name.msg %>
                     </div>
                 <% } %>
 
-                <label class="phone"> Teléfono:
+                <div class="phone">
+                    <label> Teléfono:</label>
                     <input type="tel" name="phone" placeholder="Teléfono" value="<%= locals.oldData && !locals.errors.phone ? locals.oldData.phone : '' %>">
-                </label>
+                </div>
                 <% if (locals.errors && errors.phone) { %>
                     <div class="textDangerError">
                         <%= errors.phone.msg %>
                     </div>
                 <% } %>
 
-                <label class="address"> Dirección:
-                    <input type="text" class="street" name="street" placeholder="Calle" value="<%= locals.oldData && !locals.errors.street ? locals.oldData.street : '' %>">
-                    <input type="text" class="altura" name="altura" placeholder="Altura" value="<%= locals.oldData && !locals.errors.altura ? locals.oldData.altura : '' %>">
-                    <input type="text" class="piso" name="piso" placeholder="Piso">
-                    <input type="text" class="dpto" name="dpto" placeholder="Dpto">
-                </label>
+                <div class="address">
+                    <label> Dirección:</label>
+                    <div class="addressInputs">
+                        <input type="text" class="street" name="street" placeholder="Calle" value="<%= locals.oldData && !locals.errors.street ? locals.oldData.street : '' %>">
+                        <input type="text" class="altura" name="altura" placeholder="Altura" value="<%= locals.oldData && !locals.errors.altura ? locals.oldData.altura : '' %>">
+                        <input type="text" class="piso" name="piso" placeholder="Piso">
+                        <input type="text" class="dpto" name="dpto" placeholder="Dpto">
+                    </div>
+                </div>
                 <% if (locals.errors && errors.street) { %>
                     <div class="textDangerError">
                         <%= errors.street.msg %>
@@ -52,9 +57,10 @@
                     </div>
                 <% } %>
 
-                <label class="message"> Mensaje:
+                <div class="message">
+                    <label class="message"> Mensaje:</label>
                     <textarea name="message" cols="60" rows="2" placeholder="Mensaje"></textarea>
-                </label>
+                </div>
 
                 <div class="buttonContinuar">
                     <button class="button" type="submit">Continuar</button>
