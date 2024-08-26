@@ -7,6 +7,7 @@ const homeRoute = require('./routes/homeRouter.js')
 const pizzasRoute = require('./routes/pizzasRouter.js')
 const empanadasRoute = require('./routes/empanadasRouter.js')
 const formDatosRouter = require('./routes/formDatosRouter.js')
+const seleccionProductos = require('./routes/seleccionProductosRouter.js')
 
 // Recursos estaticos.
 app.use(express.static('public'))
@@ -22,6 +23,7 @@ app.use('/', homeRoute)
 app.use('/', pizzasRoute)
 app.use('/', empanadasRoute)
 app.use('/', formDatosRouter)
+app.use('/', seleccionProductos)
 
 const PORT = process.env.PORT ?? 3000
 
