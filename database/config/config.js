@@ -4,15 +4,15 @@ module.exports = {
     // password: null,
     password: 'rootpassword',
     database: 'hilacha_db',
-    host: 'mysql-container',
-    // host: '127.0.0.1',
+    // host: 'mysql-container',
+    host: '127.0.0.1',
     dialect: 'mysql'
   },
   test: {
     username: 'root',
     // password: null,
     password: 'rootpassword',
-    database: 'database_test',
+    database: 'hilacha_db',
     host: 'mysql-container',
     // host: '127.0.0.1',
     dialect: 'mysql'
@@ -21,7 +21,7 @@ module.exports = {
     username: 'root',
     // password: null,
     password: 'rootpassword',
-    database: 'database_production',
+    database: 'hilacha_db',
     host: 'mysql-container',
     // host: '127.0.0.1',
     dialect: 'mysql'

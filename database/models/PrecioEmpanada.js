@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
       autoIncrement: true
     },
     categoria_id: {
-      type: dataTypes.STRING
+      type: dataTypes.INTEGER
     },
     precio: {
       type: dataTypes.DECIMAL(10, 2)

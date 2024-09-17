@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Empanada.hasOne(models.PrecioEmpanada, {
       as: 'PrecioEmpanada',
-      foreignKey: 'categoria_empanada_id'
+      foreignKey: 'categoria_id'
     })
   }
 
