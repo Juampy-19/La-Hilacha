@@ -1,5 +1,5 @@
 .empanadas {
-    display: grid;
+    /* display: grid; */
     width: 100%;
     font-size: 22px;
     border: 2px solid var(--verde);
@@ -41,6 +41,10 @@
     font-size: 18px;
 }
 
+.precio {
+    color: var(--rojo);
+}
+
 @media (max-width: 424px) {
     .contButton {
         display: none;
@@ -64,7 +68,7 @@
 
     .empanadas {
         width: 70%;
-        grid-template-columns: 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr; */
         margin: 25px auto;
     }
 
@@ -73,19 +77,19 @@
     }
 
     .empTradicionales {
-        grid-column: 1 / 2;
+        /* grid-column: 1 / 2; */
         font-size: 20px;
     }
 
     .empPremium {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
+        /* grid-column: 1 / 2; */
+        /* grid-row: 2 / 3; */
         font-size: 20px;
     }
 
     .empCanastitas {
-        grid-column: 2 / 3;
-        grid-row: 1 / 3;
+        /* grid-column: 2 / 3; */
+        /* grid-row: 1 / 3; */
         font-size: 20px;
     }
 }
