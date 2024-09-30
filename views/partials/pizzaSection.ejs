@@ -79,6 +79,13 @@
     <div class="pizzas">
         <section class="pizzasEternas">
             <h2>Pizzas eternas</h2>
+            <div class="pizzaTamañoPrecio">
+              <h3>Tamaños y precios</h3>
+              <% precioEternas.forEach(precio => { %>
+                <h4><%= precio.TamañoPizza.tamaño %></h4>
+                <h5>$<%= precio.precio %></h5>
+              <% }) %>
+            </div>
             <ul>
                 <% eternas.forEach(pizza => { %>
                     <li><%= pizza.sabor %></li>
@@ -88,6 +95,13 @@
 
         <section class="pizzasClasicas">
             <h2>Pizzas clásicas</h2>
+            <div class="pizzaTamañoPrecio">
+              <h3>Tamaños y precios</h3>
+              <% precioClasicas.forEach(precio => { %>
+                <h4><%= precio.TamañoPizza.tamaño %></h4>
+                <h5>$<%= precio.precio %></h5>
+              <% }) %>
+            </div>
             <ul>
                 <% clasicas.forEach(pizza => { %>
                     <li><%= pizza.sabor %></li>
@@ -97,6 +111,13 @@
 
         <section class="pizzasTradicionales">
             <h2>Pizzas tradicionales</h2>
+            <div class="pizzaTamañoPrecio">
+              <h3>Tamaños y precios</h3>
+              <% precioTradicionales.forEach(precio => { %>
+                <h4><%= precio.TamañoPizza.tamaño %></h4>
+                <h5>$<%= precio.precio %></h5>
+              <% }) %>
+            </div>
             <ul>
                 <% tradicionales.forEach(pizza => { %>
                     <li><%= pizza.sabor %></li>
@@ -106,6 +127,13 @@
 
         <section class="pizzasEspeciales">
             <h2>Pizzas especiales</h2>
+            <div class="pizzaTamañoPrecio">
+              <h3>Tamaños y precios</h3>
+              <% precioEspeciales.forEach(precio => { %>
+                <h4><%= precio.TamañoPizza.tamaño %></h4>
+                <h5>$<%= precio.precio %></h5>
+              <% }) %>
+            </div>
             <ul>
                 <% especiales.forEach(pizza => { %>
                     <li><%= pizza.sabor %></li>

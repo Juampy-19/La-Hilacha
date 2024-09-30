@@ -162,7 +162,7 @@ INSERT INTO `pizzas` (`id`, `producto_id`, `sabor`, `ingredientes`, `categoria_i
 (31, 1, 'Genovesa', 'Muzza, tomate, palmitos, tollitos de jamón y provolone', 4, 0),
 (32, 1, 'Salerno', 'Muzza, cebolla, roquefort y panceta', 4, 0),
 (33, 1, 'Americana', 'Muzza, tomate, huevo, rollitos  de jamón, papas y ketchup', 4, 0),
-(34, 1, 'Fainá', '', 1, 4);
+(34, 1, 'Fainá', '', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -206,7 +206,7 @@ INSERT INTO `precio_pizza` (`id`, `categoria_id`, `tamaño_id`, `precio`) VALUES
 (1, 1, 1, '950.00'),
 (2, 1, 2, '1100.00'),
 (3, 1, 3, '1400.00'),
-(4, 1, 4, '100.00'),
+--(4, 1, 4, '100.00'),
 (5, 2, 1, '1200.00'),
 (6, 2, 2, '1400.00'),
 (7, 2, 3, '1800.00'),
@@ -255,7 +255,7 @@ INSERT INTO `tamaño_pizza` (`id`, `tamaño`) VALUES
 (1, 'chica'),
 (2, 'grande'),
 (3, 'gigante'),
-(4, 'porción');
+--(4, 'porción');
 
 --
 -- Índices para tablas volcadas

@@ -4,7 +4,7 @@ module.exports = (sequelize, dataTypes) => {
     id: {
       type: dataTypes.INTEGER,
       primaryKey: true,
-      autoincrement: true
+      autoIncrement: true
     },
     categoria_id: {
       type: dataTypes.INTEGER
@@ -14,9 +14,6 @@ module.exports = (sequelize, dataTypes) => {
     },
     precio: {
       type: dataTypes.DECIMAL(10, 2)
-    },
-    pizza_id: {
-      type: dataTypes.INTEGER
     }
   }
   const config = {
@@ -26,11 +23,6 @@ module.exports = (sequelize, dataTypes) => {
   const PrecioPizza = sequelize.define(alias, cols, config)
 
   PrecioPizza.associate = function (models) {
-    PrecioPizza.belongsTo(models.Pizza, {
-      as: 'Pizza',
-      foreignKey: 'pizza_id'
-    })
-
     PrecioPizza.belongsTo(models.CategoriaPizza, {
       as: 'CategoriaPizza',
       foreignKey: 'categoria_id'

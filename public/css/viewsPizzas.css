@@ -1,5 +1,4 @@
 .pizzas {
-    display: grid;
     width: 100%;
     font-size: 22px;
     border: 2px solid var(--verde);
@@ -46,6 +45,35 @@
     font-size: 20px;
 }
 
+.pizzaTamañoPrecio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    margin: 8px 0px;
+}
+
+.pizzaTamañoPrecio h3 {
+    width: 100%;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    color: var(--blanco);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.pizzaTamañoPrecio h4 {
+    color: var(--verde);
+    grid-row: 2 / 3;
+    text-align: center;
+}
+
+.pizzaTamañoPrecio h5 {
+    color: var(--rojo);
+    grid-row: 3 / 4;
+    text-align: center;
+}
+
 @media (min-width: 768px) {
 
     .pizzas {
@@ -54,23 +82,7 @@
         margin: 25px auto
     }
 
-    .pizzasEternas {
-        grid-column: 1 / 2;
+    .pizzaTamañoPrecio {
+        width: 50%;
     }
-
-    .pizzasClasicas {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-    }
-
-    .pizzasTradicionales {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-    }
-
-    .pizzasEspeciales {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-    }
-
 }

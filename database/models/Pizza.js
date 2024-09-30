@@ -34,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
       foreignKey: 'producto_id'
     })
 
-    Pizza.hasMany(models.CategoriaPizza, {
+    Pizza.belongsTo(models.CategoriaPizza, {
       as: 'CategoriaPizza',
       foreignKey: 'categoria_id'
     })
