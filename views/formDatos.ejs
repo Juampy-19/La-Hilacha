@@ -8,13 +8,7 @@
     <%- include('./partials/header.ejs') %>
 
     <main>
-        <div class="burgerMenu">
-            <i class="fas fa-bars"></i>
-        </div>
-
-        <div class="contButton">
-            <a href="/"><button class="button">Home</button></a>
-        </div>
+        <%- include('./partials/menu.ejs', { activePage: 'formDatos' }) %>
 
         <section class="formDatos">
 

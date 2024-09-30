@@ -8,7 +8,7 @@
     <%- include('./partials/header.ejs') %>
 
     <main>
-        <div class="burgerMenu">
+        <!-- <div class="burgerMenu">
             <i class="fas fa-bars"></i>
         </div>
 
@@ -16,7 +16,8 @@
             <a href="/"><button class="button">Home</button></a>
             <a href="/pizzas"><button class="button">Pizzas</button></a>
             <a href="/formDatos"><button class="button">Pedí</button></a>
-        </div>
+        </div> -->
+        <%- include('./partials/menu.ejs', { activePage: 'empanadas' } )%>
 
         <%- include('./partials/empSection.ejs') %>
 

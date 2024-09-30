@@ -1,0 +1,21 @@
+<div class="burgerMenu" id="burgerMenu">
+    <i class="fas fa-bars"></i>
+</div>
+
+<div class="contButton" id="navMenu">
+    <% if (activePage !== 'home') { %>
+        <a href="/"><button class="button">Home</button></a>
+    <% } %>
+
+    <% if (activePage !== 'pizzas') { %>
+        <a href="/pizzas"><button class="button">Pizzas</button></a>
+    <% } %>
+
+    <% if (activePage !== 'empanadas') { %>
+        <a href="/empanadas"><button class="button">Empanadas</button></a>
+    <% } %>
+
+    <% if (activePage !== 'formDatos') { %>
+        <a href="/formDatos"><button class="button">Pedí</button></a>
+    <% } %>
+</div>
