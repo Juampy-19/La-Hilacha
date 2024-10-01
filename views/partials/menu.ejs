@@ -1,8 +1,16 @@
 <div class="burgerMenu" id="burgerMenu">
     <i class="fas fa-bars"></i>
+    <div id="navMenu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pizzas">Pizzas</a></li>
+            <li><a href="/empanadas">Empanadas</a></li>
+            <li><a href="/formDatos">Pedí</a></li>
+        </ul>
+    </div>
 </div>
 
-<div class="contButton" id="navMenu">
+<div class="contButton">
     <% if (activePage !== 'home') { %>
         <a href="/"><button class="button">Home</button></a>
     <% } %>
