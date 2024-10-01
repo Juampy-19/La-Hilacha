@@ -24,6 +24,9 @@ app.use('/', pizzasRoute)
 app.use('/', empanadasRoute)
 app.use('/', formDatosRouter)
 app.use('/', seleccionProductos)
+app.use((req, res, next) => {
+  res.status(404).render('404')
+})
 
 const PORT = process.env.PORT ?? 3000
 

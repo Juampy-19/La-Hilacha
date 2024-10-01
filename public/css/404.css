@@ -1,0 +1,21 @@
+.viewError {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.viewError h1 {
+    margin: auto;
+    color: var(--blanco);
+}
+
+.viewError a {
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .viewError {
+        margin-right: 100px;
+    }
+}
