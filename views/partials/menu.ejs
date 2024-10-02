@@ -2,10 +2,18 @@
     <i class="fas fa-bars"></i>
     <div id="navMenu">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/pizzas">Pizzas</a></li>
-            <li><a href="/empanadas">Empanadas</a></li>
-            <li><a href="/formDatos">Pedí</a></li>
+            <% if (activePage !== 'home') { %>
+                <li><a href="/">Home</a></li>
+            <% } %>
+            <% if (activePage !== 'pizzas') { %>
+                <li><a href="/pizzas">Pizzas</a></li>
+            <% } %>
+            <% if (activePage !== 'empanadas') { %>
+                <li><a href="/empanadas">Empanadas</a></li>
+            <% } %>
+            <% if (activePage !== 'formDatos') { %>
+                <li><a href="/formDatos">Pedí</a></li>
+            <% } %>
         </ul>
     </div>
 </div>
