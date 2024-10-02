@@ -81,13 +81,13 @@
             <h2>Pizzas eternas</h2>
             <div class="pizzaTamañoPrecio">
               <h3>Tamaños y precios</h3>
-              <% precioEternas.forEach(precio => { %>
+              <% pizzasData.precioEternas.forEach(precio => { %>
                 <h4><%= precio.TamañoPizza.tamaño %></h4>
                 <h5>$<%= precio.precio %></h5>
               <% }) %>
             </div>
             <ul>
-                <% eternas.forEach(pizza => { %>
+                <% pizzasData.eternas.forEach(pizza => { %>
                     <li><%= pizza.sabor %></li>
                 <% }) %>
             </ul>
@@ -97,13 +97,13 @@
             <h2>Pizzas clásicas</h2>
             <div class="pizzaTamañoPrecio">
               <h3>Tamaños y precios</h3>
-              <% precioClasicas.forEach(precio => { %>
+              <% pizzasData.precioClasicas.forEach(precio => { %>
                 <h4><%= precio.TamañoPizza.tamaño %></h4>
                 <h5>$<%= precio.precio %></h5>
               <% }) %>
             </div>
             <ul>
-                <% clasicas.forEach(pizza => { %>
+                <% pizzasData.clasicas.forEach(pizza => { %>
                     <li><%= pizza.sabor %></li>
                 <% }) %>
             </ul>
@@ -113,13 +113,13 @@
             <h2>Pizzas tradicionales</h2>
             <div class="pizzaTamañoPrecio">
               <h3>Tamaños y precios</h3>
-              <% precioTradicionales.forEach(precio => { %>
+              <% pizzasData.precioTradicionales.forEach(precio => { %>
                 <h4><%= precio.TamañoPizza.tamaño %></h4>
                 <h5>$<%= precio.precio %></h5>
               <% }) %>
             </div>
             <ul>
-                <% tradicionales.forEach(pizza => { %>
+                <% pizzasData.tradicionales.forEach(pizza => { %>
                     <li><%= pizza.sabor %></li>
                 <% }) %>
             </ul>
@@ -129,13 +129,13 @@
             <h2>Pizzas especiales</h2>
             <div class="pizzaTamañoPrecio">
               <h3>Tamaños y precios</h3>
-              <% precioEspeciales.forEach(precio => { %>
+              <% pizzasData.precioEspeciales.forEach(precio => { %>
                 <h4><%= precio.TamañoPizza.tamaño %></h4>
                 <h5>$<%= precio.precio %></h5>
               <% }) %>
             </div>
             <ul>
-                <% especiales.forEach(pizza => { %>
+                <% pizzasData.especiales.forEach(pizza => { %>
                     <li><%= pizza.sabor %></li>
                 <% }) %>
             </ul>
