@@ -79,9 +79,9 @@
     <div class="empanadas">
         <section class="empTradicionales">
             <h2>Empanadas tradicionales</h2>
-            <h2 class="precio">$<%= precioTradicionales[0]?.precio %></h2>
+            <h2 class="precio">$<%= empanadasData.precioTradicionales[0]?.precio %></h2>
             <ul class="lisEmp">
-                <% tradicionales.forEach(empanada => { %>
+                <% empanadasData.tradicionales.forEach(empanada => { %>
                     <li><%= empanada.sabor %></li>
                 <% }) %>
             </ul>
@@ -89,9 +89,9 @@
 
         <section class="empCanastitas">
             <h2>Empanadas abiertas tipo canastitas</h2>
-            <h2 class="precio">$<%= precioCanastitas[0]?.precio %></h2>
+            <h2 class="precio">$<%= empanadasData.precioCanastitas[0]?.precio %></h2>
             <ul class="lisEmp">
-                <% canastitas.forEach(empanada => { %>
+                <% empanadasData.canastitas.forEach(empanada => { %>
                     <li><%= empanada.sabor %></li>
                 <% }) %>
             </ul>
@@ -99,9 +99,9 @@
 
         <section class="empPremium">
             <h2>Empanadas premium</h2>
-            <h2 class="precio">$<%= precioPremium[0]?.precio %></h2>
+            <h2 class="precio">$<%= empanadasData.precioPremium[0]?.precio %></h2>
             <ul class="lisEmp">
-                <% premium.forEach(empanada => { %>
+                <% empanadasData.premium.forEach(empanada => { %>
                     <li><%= empanada.sabor %></li>
                 <% }) %>
             </ul>
