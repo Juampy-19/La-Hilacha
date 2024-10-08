@@ -12,11 +12,11 @@
             <section class="selecEmpanadas">
                 <div class="titleForm">
                     <h2>Empanadas</h2>
-                    <i class="fas fa-arrow-circle-right toggle-menu"></i>
+                    <i class="fas fa-arrow-circle-right toggle-menu" data-menu="empanadas"></i>
                 </div>
 
-                <div class="menu">
-                    <div class="selecTradicionales">
+                <div class="menu empanadas-menu">
+                    <div class="selecEmpanadaCategoria">
                         <h3>Tradicionales</h3>
                         <% empanadasData.tradicionales.forEach(empanada => { %>
                             <div class="empanadaItem">
@@ -30,7 +30,7 @@
                         <% }) %>
                     </div>
 
-                    <div class="selecCanastitas">
+                    <div class="selecEmpanadaCategoria">
                         <h3>Canastitas</h3>
                         <% empanadasData.canastitas.forEach(empanada => { %>
                             <div class="empanadaItem">
@@ -44,7 +44,7 @@
                         <% }) %>
                     </div>
 
-                    <div class="selecPremium">
+                    <div class="selecEmpanadaCategoria">
                         <h3>Premium</h3>
                         <% empanadasData.premium.forEach(empanada => { %>
                             <div class="empanadaItem">
@@ -53,6 +53,71 @@
                                     <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
                                     <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
                                     <button type="button" class="increase" data-sabor="<%= empanada.sabor %>">+</button>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </section>
+
+            <section class="selecPizzas">
+                <div class="titleForm">
+                    <h2>Pizzas</h2>
+                    <i class="fas fa-arrow-circle-right toggle-menu" data-menu="pizzas"></i>
+                </div>
+
+                <div class="menu pizzas-menu">
+                    <div class="selecPizzaCategoria">
+                        <h3>Eternas</h3>
+                        <% pizzasData.eternas.forEach(pizza => { %>
+                            <div class="pizzaItem">
+                                <li><%= pizza.sabor %></li>
+                                <div class="pizzasSelector">
+                                    <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
+                                    <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
+                                    <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+
+                    <div class="selecPizzaCategoria">
+                        <h3>Clásicas</h3>
+                        <% pizzasData.clasicas.forEach(pizza => { %>
+                            <div class="pizzaItem">
+                                <li><%= pizza.sabor %></li>
+                                <div class="pizzasSelector">
+                                    <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
+                                    <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
+                                    <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+
+                    <div class="selecPizzaCategoria">
+                        <h3>Tradicionales</h3>
+                        <% pizzasData.tradicionales.forEach(pizza => { %>
+                            <div class="pizzaItem">
+                                <li><%= pizza.sabor %></li>
+                                <div class="pizzasSelector">
+                                    <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
+                                    <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
+                                    <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+
+                    <div class="selecPizzaCategoria">
+                        <h3>Especiales</h3>
+                        <% pizzasData.especiales.forEach(pizza => { %>
+                            <div class="pizzaItem">
+                                <li><%= pizza.sabor %></li>
+                                <div class="pizzasSelector">
+                                    <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
+                                    <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
+                                    <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
                                 </div>
                             </div>
                         <% }) %>

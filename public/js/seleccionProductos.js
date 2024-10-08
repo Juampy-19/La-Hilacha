@@ -1,16 +1,35 @@
-const toggleButton = document.querySelector('.toggle-menu')
+// const toggleButton = document.querySelector('.toggle-menu')
 
-const menu = document.querySelector('.menu')
+// const menu = document.querySelector('.menu')
 
-toggleButton.addEventListener('click', () => {
-  menu.classList.toggle('show')
-  if (menu.classList.contains('show')) {
-    toggleButton.classList.remove('fa-arrow-circle-right')
-    toggleButton.classList.add('fa-arrow-circle-down')
-  } else {
-    toggleButton.classList.remove('fa-arrow-circle-down')
-    toggleButton.classList.add('fa-arrow-circle-right')
-  }
+// toggleButton.addEventListener('click', () => {
+//   menu.classList.toggle('show')
+//   if (menu.classList.contains('show')) {
+//     toggleButton.classList.remove('fa-arrow-circle-right')
+//     toggleButton.classList.add('fa-arrow-circle-down')
+//   } else {
+//     toggleButton.classList.remove('fa-arrow-circle-down')
+//     toggleButton.classList.add('fa-arrow-circle-right')
+//   }
+// })
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButtons = document.querySelectorAll('.toggle-menu')
+
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const menuType = this.getAttribute('data-menu')
+      const menu = document.querySelector(`.${menuType}-menu`)
+
+      menu.classList.toggle('show')
+      if (menu.classList.contains('show')) {
+        this.classList.remove('fa-arrow-circle-right')
+        this.classList.add('fa-arrow-circle-down')
+      } else {
+        this.classList.remove('fa-arrow-circle-down')
+        this.classList.add('fa-arrow-circle-right')
+      }
+    })
+  })
 })
 
 document.addEventListener('DOMContentLoaded', () => {
