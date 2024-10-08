@@ -1,5 +1,10 @@
 module.exports = {
-  seleccionProductos: (req, res) => {
-    res.render('seleccionProductos')
+  seleccionProductos: async (req, res) => {
+    const { empanadasData, loading } = res.locals
+
+    res.render('seleccionProductos', {
+      ...empanadasData,
+      loading
+    })
   }
 }

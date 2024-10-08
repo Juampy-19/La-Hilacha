@@ -4,9 +4,66 @@
     <%- include('./partials/head.ejs') %>
 
 <body>
+
     <%- include('./partials/header.ejs') %>
+
+    <main>
+        <form action="" class="pedido">
+            <section class="selecEmpanadas">
+                <div class="titleForm">
+                    <h2>Empanadas</h2>
+                    <i class="fas fa-arrow-circle-right toggle-menu"></i>
+                </div>
+
+                <div class="menu">
+                    <div class="selecTradicionales">
+                        <h3>Tradicionales</h3>
+                        <% empanadasData.tradicionales.forEach(empanada => { %>
+                            <div class="empanadaItem">
+                                <li><%= empanada.sabor %></li>
+                                <div class="empanadaSelector">
+                                    <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
+                                    <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
+                                    <button type="button" class="increase" data-sabor="<%= empanada.sabor %>">+</button>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+
+                    <div class="selecCanastitas">
+                        <h3>Canastitas</h3>
+                        <% empanadasData.canastitas.forEach(empanada => { %>
+                            <div class="empanadaItem">
+                                <li><%= empanada.sabor %></li>
+                                <div class="empanadaSelector">
+                                    <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
+                                    <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
+                                    <button type="button" class="increase" data-sabor="<%= empanada.sabor %>">+</button>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+
+                    <div class="selecPremium">
+                        <h3>Premium</h3>
+                        <% empanadasData.premium.forEach(empanada => { %>
+                            <div class="empanadaItem">
+                                <li><%= empanada.sabor %></li>
+                                <div class="empanadaSelector">
+                                    <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
+                                    <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
+                                    <button type="button" class="increase" data-sabor="<%= empanada.sabor %>">+</button>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </main>
 
     <%- include('./partials/footer.ejs') %>
     
 </body>
+    <script src="/js/seleccionProductos.js"></script>
 </html>

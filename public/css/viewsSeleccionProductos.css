@@ -1,0 +1,103 @@
+.pedido {
+    width: 100%;
+    font-size: 22px;
+    border: 2px solid var(--verde);
+    outline: 5px solid var(--transpVerde);
+    border-radius: 8px;
+    background: var(--transpNegro);
+    padding: 2px;
+}
+
+.selecEmpanadas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.selecEmpanadas li {
+    list-style: none;
+    color: var(--blanco);
+}
+
+.titleForm {
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+    gap: 25px;
+}
+
+.menu {
+    display: none;
+}
+
+.menu.show {
+    display: block;
+}
+
+.selecTradicionales {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.selecTradicionales h3 {
+    text-align: center;
+}
+
+.selecCanastitas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.selecCanastitas h3 {
+    text-align: center;
+}
+
+.selecPremium {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.selecPremium h3 {
+    text-align: center;
+}
+
+.empanadaItem {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.empanadaItem input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+}
+
+.empanadaItem button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+}
+
+/* Para Chrome, Safari, Edge y Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
