@@ -20,6 +20,7 @@
                         <h3>Tradicionales</h3>
                         <% empanadasData.tradicionales.forEach(empanada => { %>
                             <div class="empanadaItem">
+                                <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
                                 <li><%= empanada.sabor %></li>
                                 <div class="empanadaSelector">
                                     <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
@@ -34,6 +35,7 @@
                         <h3>Canastitas</h3>
                         <% empanadasData.canastitas.forEach(empanada => { %>
                             <div class="empanadaItem">
+                                <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
                                 <li><%= empanada.sabor %></li>
                                 <div class="empanadaSelector">
                                     <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
@@ -48,6 +50,7 @@
                         <h3>Premium</h3>
                         <% empanadasData.premium.forEach(empanada => { %>
                             <div class="empanadaItem">
+                                <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
                                 <li><%= empanada.sabor %></li>
                                 <div class="empanadaSelector">
                                     <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>

@@ -1,17 +1,3 @@
-// const toggleButton = document.querySelector('.toggle-menu')
-
-// const menu = document.querySelector('.menu')
-
-// toggleButton.addEventListener('click', () => {
-//   menu.classList.toggle('show')
-//   if (menu.classList.contains('show')) {
-//     toggleButton.classList.remove('fa-arrow-circle-right')
-//     toggleButton.classList.add('fa-arrow-circle-down')
-//   } else {
-//     toggleButton.classList.remove('fa-arrow-circle-down')
-//     toggleButton.classList.add('fa-arrow-circle-right')
-//   }
-// })
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButtons = document.querySelectorAll('.toggle-menu')
 
@@ -29,6 +15,43 @@ document.addEventListener('DOMContentLoaded', () => {
         this.classList.add('fa-arrow-circle-right')
       }
     })
+  })
+
+  document.querySelectorAll('.empanadaItem').forEach(item => {
+    const increaseButton = item.querySelector('.increase')
+    const decreaseButton = item.querySelector('.decrease')
+    const quantityInput = item.querySelector('.quantity')
+
+    increaseButton.disabled = true
+    decreaseButton.disabled = true
+    quantityInput.disabled = true
+  })
+})
+
+document.querySelectorAll('.empanadaCheckbox').forEach(checkbox => {
+  checkbox.addEventListener('change', function () {
+    const empanadaItem = this.closest('.empanadaItem')
+    const empanadaSelector = empanadaItem.querySelector('.empanadaSelector')
+
+    if (empanadaSelector) {
+      const increaseButton = document.querySelector('.increase')
+      const decreaseButton = document.querySelector('.decrease')
+      const quantityInput = empanadaSelector.querySelector('.quantity')
+      console.log('Increase button: ', increaseButton)
+      console.log('Decrease button: ', decreaseButton)
+      console.log('Quatity input: ', quantityInput)
+
+      if (this.checked) {
+        increaseButton.disabled = false
+        decreaseButton.disabled = false
+        quantityInput.disabled = false
+      } else {
+        increaseButton.disabled = true
+        decreaseButton.disabled = true
+        quantityInput.disabled = true
+        quantityInput.value = 0
+      }
+    }
   })
 })
 
