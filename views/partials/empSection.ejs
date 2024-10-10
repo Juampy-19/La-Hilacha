@@ -1,37 +1,43 @@
-<% if (loading) { %>
-    
-    <%- include('../partials/loader.ejs') %>
-    
-<% } else { %>
-    <div class="empanadas">
-        <section class="empTradicionales">
-            <h2>Empanadas tradicionales</h2>
+<div class="empanadas">
+    <section class="empTradicionales">
+        <h2>Empanadas Tradicionales</h2>
+        <% if (loading) { %>
+            <%- include('./loader.ejs') %>
+        <% } else { %>
             <h2 class="precio">$<%= empanadasData.precioTradicionales[0]?.precio %></h2>
             <ul class="lisEmp">
                 <% empanadasData.tradicionales.forEach(empanada => { %>
                     <li><%= empanada.sabor %></li>
                 <% }) %>
             </ul>
-        </section><br>
+        <% } %>
+    </section><br>
 
-        <section class="empCanastitas">
-            <h2>Empanadas abiertas tipo canastitas</h2>
+    <section class="empCanastitas">
+        <h2>Empanadas Abiertas tipo canastitas</h2>
+        <% if (loading) { %>
+            <%- include('./loader.ejs') %>
+        <% } else { %>
             <h2 class="precio">$<%= empanadasData.precioCanastitas[0]?.precio %></h2>
             <ul class="lisEmp">
                 <% empanadasData.canastitas.forEach(empanada => { %>
                     <li><%= empanada.sabor %></li>
                 <% }) %>
             </ul>
-        </section><br>
+        <% } %>
+    </section><br>
 
-        <section class="empPremium">
-            <h2>Empanadas premium</h2>
+    <section class="empPremium">
+        <h2>Empanadas Premium</h2>
+        <% if (loading) { %>
+            <%- include('./loader.ejs') %>
+        <% } else { %>
             <h2 class="precio">$<%= empanadasData.precioPremium[0]?.precio %></h2>
             <ul class="lisEmp">
                 <% empanadasData.premium.forEach(empanada => { %>
                     <li><%= empanada.sabor %></li>
                 <% }) %>
             </ul>
-        </section><br>
-    </div>
-<% } %>
+        <% } %>
+    </section><br>
+</div>

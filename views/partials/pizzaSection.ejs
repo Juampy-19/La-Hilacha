@@ -1,71 +1,81 @@
-<% if (loading) { %>
-    
-  <%- include('../partials/loader.ejs') %>
+<div class="pizzas">
+  <section class="pizzasEternas">
+    <h2>Pizzas Eternas</h2>
+    <% if (loading) { %>
+      <%- include('../partials/loader.ejs') %>
+    <% } else { %>
+      <div class="pizzaTamañoPrecio">
+          <h3>Tamaños y precios</h3>
+          <% pizzasData.precioEternas.forEach(precio => { %>
+            <h4><%= precio.TamañoPizza.tamaño %></h4>
+            <h5>$<%= precio.precio %></h5>
+          <% }) %>
+      </div>
+      <ul>
+        <% pizzasData.eternas.forEach(pizza => { %>
+          <li><%= pizza.sabor %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </section><br>
 
-<% } else { %>
-    <div class="pizzas">
-        <section class="pizzasEternas">
-            <h2>Pizzas eternas</h2>
-            <div class="pizzaTamañoPrecio">
-              <h3>Tamaños y precios</h3>
-              <% pizzasData.precioEternas.forEach(precio => { %>
-                <h4><%= precio.TamañoPizza.tamaño %></h4>
-                <h5>$<%= precio.precio %></h5>
-              <% }) %>
-            </div>
-            <ul>
-                <% pizzasData.eternas.forEach(pizza => { %>
-                    <li><%= pizza.sabor %></li>
-                <% }) %>
-            </ul>
-        </section><br>
+  <section class="pizzasClasicas">
+    <h2>Pizzas Clásicas</h2>
+    <% if (loading) { %>
+      <%- include('../partials/loader.ejs') %>
+    <% } else { %>
+      <div class="pizzaTamañoPrecio">
+        <h3>Tamaños y precios</h3>
+        <% pizzasData.precioClasicas.forEach(precio => { %>
+          <h4><%= precio.TamañoPizza.tamaño %></h4>
+          <h5>$<%= precio.precio %></h5>
+        <% }) %>
+      </div>
+      <ul>
+          <% pizzasData.clasicas.forEach(pizza => { %>
+            <li><%= pizza.sabor %></li>
+          <% }) %>
+      </ul>
+    <% } %>
+  </section><br>
 
-        <section class="pizzasClasicas">
-            <h2>Pizzas clásicas</h2>
-            <div class="pizzaTamañoPrecio">
-              <h3>Tamaños y precios</h3>
-              <% pizzasData.precioClasicas.forEach(precio => { %>
-                <h4><%= precio.TamañoPizza.tamaño %></h4>
-                <h5>$<%= precio.precio %></h5>
-              <% }) %>
-            </div>
-            <ul>
-                <% pizzasData.clasicas.forEach(pizza => { %>
-                    <li><%= pizza.sabor %></li>
-                <% }) %>
-            </ul>
-        </section><br>
+  <section class="pizzasTradicionales">
+      <h2>Pizzas Tradicionales</h2>
+      <% if (loading) { %>
+        <%- include('../partials/loader.ejs') %>
+      <% } else { %>
+        <div class="pizzaTamañoPrecio">
+          <h3>Tamaños y precios</h3>
+          <% pizzasData.precioTradicionales.forEach(precio => { %>
+            <h4><%= precio.TamañoPizza.tamaño %></h4>
+            <h5>$<%= precio.precio %></h5>
+          <% }) %>
+        </div>
+        <ul>
+            <% pizzasData.tradicionales.forEach(pizza => { %>
+              <li><%= pizza.sabor %></li>
+            <% }) %>
+        </ul>
+      <% } %>
+  </section><br>
 
-        <section class="pizzasTradicionales">
-            <h2>Pizzas tradicionales</h2>
-            <div class="pizzaTamañoPrecio">
-              <h3>Tamaños y precios</h3>
-              <% pizzasData.precioTradicionales.forEach(precio => { %>
-                <h4><%= precio.TamañoPizza.tamaño %></h4>
-                <h5>$<%= precio.precio %></h5>
-              <% }) %>
-            </div>
-            <ul>
-                <% pizzasData.tradicionales.forEach(pizza => { %>
-                    <li><%= pizza.sabor %></li>
-                <% }) %>
-            </ul>
-        </section><br>
-
-        <section class="pizzasEspeciales">
-            <h2>Pizzas especiales</h2>
-            <div class="pizzaTamañoPrecio">
-              <h3>Tamaños y precios</h3>
-              <% pizzasData.precioEspeciales.forEach(precio => { %>
-                <h4><%= precio.TamañoPizza.tamaño %></h4>
-                <h5>$<%= precio.precio %></h5>
-              <% }) %>
-            </div>
-            <ul>
-                <% pizzasData.especiales.forEach(pizza => { %>
-                    <li><%= pizza.sabor %></li>
-                <% }) %>
-            </ul>
-        </section><br>
-    </div>
-<% } %>
+  <section class="pizzasEspeciales">
+      <h2>Pizzas Especiales</h2>
+      <% if (loading) { %>
+        <%- include('../partials/loader.ejs') %>
+      <% } else { %>
+        <div class="pizzaTamañoPrecio">
+          <h3>Tamaños y precios</h3>
+          <% pizzasData.precioEspeciales.forEach(precio => { %>
+            <h4><%= precio.TamañoPizza.tamaño %></h4>
+            <h5>$<%= precio.precio %></h5>
+          <% }) %>
+        </div>
+        <ul>
+            <% pizzasData.especiales.forEach(pizza => { %>
+              <li><%= pizza.sabor %></li>
+            <% }) %>
+        </ul>
+      <% } %>
+  </section><br>
+</div>
