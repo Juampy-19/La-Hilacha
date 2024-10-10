@@ -4,7 +4,7 @@
         <% if (loading) { %>
             <%- include('./loader.ejs') %>
         <% } else { %>
-            <h2 class="precio">$<%= empanadasData.precioTradicionales[0]?.precio %></h2>
+            <p class="precio">$<%= empanadasData.precioTradicionales[0]?.precio %></p>
             <ul class="lisEmp">
                 <% empanadasData.tradicionales.forEach(empanada => { %>
                     <li><%= empanada.sabor %></li>
@@ -18,7 +18,7 @@
         <% if (loading) { %>
             <%- include('./loader.ejs') %>
         <% } else { %>
-            <h2 class="precio">$<%= empanadasData.precioCanastitas[0]?.precio %></h2>
+            <p class="precio">$<%= empanadasData.precioCanastitas[0]?.precio %></p>
             <ul class="lisEmp">
                 <% empanadasData.canastitas.forEach(empanada => { %>
                     <li><%= empanada.sabor %></li>
@@ -32,7 +32,7 @@
         <% if (loading) { %>
             <%- include('./loader.ejs') %>
         <% } else { %>
-            <h2 class="precio">$<%= empanadasData.precioPremium[0]?.precio %></h2>
+            <p class="precio">$<%= empanadasData.precioPremium[0]?.precio %></p>
             <ul class="lisEmp">
                 <% empanadasData.premium.forEach(empanada => { %>
                     <li><%= empanada.sabor %></li>

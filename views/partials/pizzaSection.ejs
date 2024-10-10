@@ -8,7 +8,7 @@
           <h3>Tamaños y precios</h3>
           <% pizzasData.precioEternas.forEach(precio => { %>
             <h4><%= precio.TamañoPizza.tamaño %></h4>
-            <h5>$<%= precio.precio %></h5>
+            <p class="precio">$<%= precio.precio %></p>
           <% }) %>
       </div>
       <ul>
@@ -28,7 +28,7 @@
         <h3>Tamaños y precios</h3>
         <% pizzasData.precioClasicas.forEach(precio => { %>
           <h4><%= precio.TamañoPizza.tamaño %></h4>
-          <h5>$<%= precio.precio %></h5>
+          <p class="precio">$<%= precio.precio %></p>
         <% }) %>
       </div>
       <ul>
@@ -48,7 +48,7 @@
           <h3>Tamaños y precios</h3>
           <% pizzasData.precioTradicionales.forEach(precio => { %>
             <h4><%= precio.TamañoPizza.tamaño %></h4>
-            <h5>$<%= precio.precio %></h5>
+            <p class="precio">$<%= precio.precio %></p>
           <% }) %>
         </div>
         <ul>
@@ -68,7 +68,7 @@
           <h3>Tamaños y precios</h3>
           <% pizzasData.precioEspeciales.forEach(precio => { %>
             <h4><%= precio.TamañoPizza.tamaño %></h4>
-            <h5>$<%= precio.precio %></h5>
+            <p class="precio">$<%= precio.precio %></p>
           <% }) %>
         </div>
         <ul>

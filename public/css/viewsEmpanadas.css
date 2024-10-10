@@ -42,6 +42,7 @@
 
 .precio {
     color: var(--rojo);
+    margin: 5px 0;
 }
 
 @media (max-width: 424px) {
