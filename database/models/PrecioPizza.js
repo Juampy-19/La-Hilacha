@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER
     },
     precio: {
-      type: dataTypes.DECIMAL(10, 2)
+      type: dataTypes.INTEGER(10)
     }
   }
   const config = {

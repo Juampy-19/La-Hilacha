@@ -29,6 +29,7 @@
                                 <div class="empanadaItem">
                                     <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
                                     <li><%= empanada.sabor %></li>
+                                    <p class="precio">$<%= empanadasData.precioTradicionales[0]?.precio %></p>
                                     <div class="empanadaSelector">
                                         <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
                                         <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
@@ -44,6 +45,7 @@
                                 <div class="empanadaItem">
                                     <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
                                     <li><%= empanada.sabor %></li>
+                                    <p class="precio">$<%= empanadasData.precioCanastitas[0]?.precio %></p>
                                     <div class="empanadaSelector">
                                         <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
                                         <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
@@ -59,6 +61,7 @@
                                 <div class="empanadaItem">
                                     <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
                                     <li><%= empanada.sabor %></li>
+                                    <p class="precio">$<%= empanadasData.precioPremium[0]?.precio %></p>
                                     <div class="empanadaSelector">
                                         <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
                                         <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">

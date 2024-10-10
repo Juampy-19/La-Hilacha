@@ -173,7 +173,7 @@ INSERT INTO `pizzas` (`id`, `producto_id`, `sabor`, `ingredientes`, `categoria_i
 CREATE TABLE `precio_empanada` (
   `id` int(10) UNSIGNED NOT NULL,
   `categoria_id` int(11) NOT NULL,
-  `precio` decimal(8,2) NOT NULL
+  `precio` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -181,9 +181,9 @@ CREATE TABLE `precio_empanada` (
 --
 
 INSERT INTO `precio_empanada` (`id`, `categoria_id`, `precio`) VALUES
-(1, 1, '190.00'),
-(2, 2, '190.00'),
-(3, 3, '210.00');
+(1, 1, '190'),
+(2, 2, '190'),
+(3, 3, '210');
 
 -- --------------------------------------------------------
 
@@ -195,7 +195,7 @@ CREATE TABLE `precio_pizza` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `categoria_id` int(11) NOT NULL,
   `tamaño_id` int(11) NOT NULL,
-  `precio` decimal(8,2) NOT NULL
+  `precio` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -203,19 +203,19 @@ CREATE TABLE `precio_pizza` (
 --
 
 INSERT INTO `precio_pizza` (`id`, `categoria_id`, `tamaño_id`, `precio`) VALUES
-(1, 1, 1, '950.00'),
-(2, 1, 2, '1100.00'),
-(3, 1, 3, '1400.00'),
---(4, 1, 4, '100.00'),
-(5, 2, 1, '1200.00'),
-(6, 2, 2, '1400.00'),
-(7, 2, 3, '1800.00'),
-(8, 3, 1, '1350.00'),
-(9, 3, 2, '1600.00'),
-(10, 3, 3, '2000.00'),
-(11, 4, 1, '1500.00'),
-(12, 4, 2, '1800.00'),
-(13, 4, 3, '2200.00');
+(1, 1, 1, '950'),
+(2, 1, 2, '1100'),
+(3, 1, 3, '1400'),
+-- (4, 1, 4, '100'),
+(5, 2, 1, '1200'),
+(6, 2, 2, '1400'),
+(7, 2, 3, '1800'),
+(8, 3, 1, '1350'),
+(9, 3, 2, '1600'),
+(10, 3, 3, '2000'),
+(11, 4, 1, '1500'),
+(12, 4, 2, '1800'),
+(13, 4, 3, '2200');
 
 -- --------------------------------------------------------
 
@@ -254,8 +254,8 @@ CREATE TABLE `tamaño_pizza` (
 INSERT INTO `tamaño_pizza` (`id`, `tamaño`) VALUES
 (1, 'chica'),
 (2, 'grande'),
-(3, 'gigante'),
---(4, 'porción');
+(3, 'gigante');
+-- (4, 'porción');
 
 --
 -- Índices para tablas volcadas
