@@ -72,6 +72,10 @@
     color: var(--blanco);
 }
 
+.increase:active, .decrease:active {
+    background-color: var(--rojo);
+}
+
 .selecPizzas {
     display: flex;
     flex-direction: column;
@@ -95,21 +99,6 @@
     gap: 15px;
 }
 
-/* .pizzaItem input {
-    width: 50px;
-    text-align: center;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
-}
-
-.pizzaItem button {
-    width: 20px;
-    height: 20px;
-    border: none;
-    border-radius: 50%;
-} */
-
 /* Para Chrome, Safari, Edge y Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -119,5 +108,5 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Para Firefox */
 input[type="number"] {
-    -moz-appearance: textfield;
+    appearance: textfield;
 }

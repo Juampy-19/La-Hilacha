@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButtons = document.querySelectorAll('.toggle-menu')
 
+  // Función para hacer el menú desplegable.
   toggleButtons.forEach(button => {
     button.addEventListener('click', function () {
       const menuType = this.getAttribute('data-menu')
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   document.querySelectorAll('.empanadaItem').forEach(item => {
+    // Función para que al cargar la vista, los  botones se carguen bloqueados hasta activar el checkbox.
     const increaseButton = item.querySelector('.increase')
     const decreaseButton = item.querySelector('.decrease')
     const quantityInput = item.querySelector('.quantity')
@@ -29,28 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 document.querySelectorAll('.empanadaCheckbox').forEach(checkbox => {
+  // Función para que al marcar el checkbox active los botones - y +.
   checkbox.addEventListener('change', function () {
     const empanadaItem = this.closest('.empanadaItem')
-    const empanadaSelector = empanadaItem.querySelector('.empanadaSelector')
+    const increaseButton = empanadaItem.querySelector('.increase')
+    const decreaseButton = empanadaItem.querySelector('.decrease')
+    const quantityInput = empanadaItem.querySelector('.quantity')
 
-    if (empanadaSelector) {
-      const increaseButton = document.querySelector('.increase')
-      const decreaseButton = document.querySelector('.decrease')
-      const quantityInput = empanadaSelector.querySelector('.quantity')
-      console.log('Increase button: ', increaseButton)
-      console.log('Decrease button: ', decreaseButton)
-      console.log('Quatity input: ', quantityInput)
-
-      if (this.checked) {
-        increaseButton.disabled = false
-        decreaseButton.disabled = false
-        quantityInput.disabled = false
-      } else {
-        increaseButton.disabled = true
-        decreaseButton.disabled = true
-        quantityInput.disabled = true
-        quantityInput.value = 0
-      }
+    if (this.checked) {
+      increaseButton.disabled = false
+      decreaseButton.disabled = false
+      quantityInput.disabled = false
+    } else {
+      increaseButton.disabled = true
+      decreaseButton.disabled = true
+      quantityInput.disabled = true
+      quantityInput.value = 0
     }
   })
 })
@@ -59,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const increaseButtons = document.querySelectorAll('.increase')
   const decreaseButtons = document.querySelectorAll('.decrease')
 
-  // Función para aumentar la cantidad
+  // Función para aumentar la cantidad.
   increaseButtons.forEach(button => {
     button.addEventListener('click', function () {
       const input = this.parentNode.querySelector('.quantity')
@@ -68,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  // Función para disminuir la cantidad
+  // Función para disminuir la cantidad.
   decreaseButtons.forEach(button => {
     button.addEventListener('click', function () {
       const input = this.parentNode.querySelector('.quantity')
