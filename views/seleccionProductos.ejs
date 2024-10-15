@@ -23,53 +23,9 @@
 
                     <% } else { %>
 
-                        <div class="selecEmpanadaCategoria">
-                            <h3>Tradicionales</h3>
-                            <% empanadasData.tradicionales.forEach(empanada => { %>
-                                <div class="empanadaItem">
-                                    <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
-                                    <li><%= empanada.sabor %></li>
-                                    <p class="precio">$<%= empanadasData.precioTradicionales[0]?.precio %></p>
-                                    <div class="empanadaSelector">
-                                        <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
-                                        <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
-                                        <button type="button" class="increase" data-sabor="<%= empanada.sabor %>">+</button>
-                                    </div>
-                                </div>
-                            <% }) %>
-                        </div>
-
-                        <div class="selecEmpanadaCategoria">
-                            <h3>Canastitas</h3>
-                            <% empanadasData.canastitas.forEach(empanada => { %>
-                                <div class="empanadaItem">
-                                    <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
-                                    <li><%= empanada.sabor %></li>
-                                    <p class="precio">$<%= empanadasData.precioCanastitas[0]?.precio %></p>
-                                    <div class="empanadaSelector">
-                                        <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
-                                        <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
-                                        <button type="button" class="increase" data-sabor="<%= empanada.sabor %>">+</button>
-                                    </div>
-                                </div>
-                            <% }) %>
-                        </div>
-
-                        <div class="selecEmpanadaCategoria">
-                            <h3>Premium</h3>
-                            <% empanadasData.premium.forEach(empanada => { %>
-                                <div class="empanadaItem">
-                                    <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
-                                    <li><%= empanada.sabor %></li>
-                                    <p class="precio">$<%= empanadasData.precioPremium[0]?.precio %></p>
-                                    <div class="empanadaSelector">
-                                        <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
-                                        <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
-                                        <button type="button" class="increase" data-sabor="<%= empanada.sabor %>">+</button>
-                                    </div>
-                                </div>
-                            <% }) %>
-                        </div>
+                        <%- include('./partials/selecEmpanadaCategoria.ejs', { tituloCategoria: 'Tradicionales', empanadas: empanadasData.tradicionales, precios: empanadasData.precioTradicionales }) %>
+                        <%- include('./partials/selecEmpanadaCategoria.ejs', { tituloCategoria: 'Canastitas', empanadas: empanadasData.canastitas, precios: empanadasData.precioCanastitas }) %>
+                        <%- include('./partials/selecEmpanadaCategoria.ejs', { tituloCategoria: 'Premium', empanadas: empanadasData.premium, precios: empanadasData.precioPremium }) %>
 
                     <% } %>
                     
@@ -90,61 +46,79 @@
 
                     <% } else { %>
 
-                        <div class="selecPizzaCategoria">
-                            <h3>Eternas</h3>
-                            <% pizzasData.eternas.forEach(pizza => { %>
-                                <div class="pizzaItem">
-                                    <li><%= pizza.sabor %></li>
-                                    <div class="pizzasSelector">
-                                        <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
-                                        <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
-                                        <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
-                                    </div>
-                                </div>
-                            <% }) %>
-                        </div>
+                        <div class="selecPizzaTamaño">
+                            <div class="titleForm">
+                                <h3>Pizzas Gigantes</h3>
+                                <i class="fas fa-arrow-circle-right toggle-menu" data-menu="gigantes"></i>
+                            </div>
 
-                        <div class="selecPizzaCategoria">
-                            <h3>Clásicas</h3>
-                            <% pizzasData.clasicas.forEach(pizza => { %>
-                                <div class="pizzaItem">
-                                    <li><%= pizza.sabor %></li>
-                                    <div class="pizzasSelector">
-                                        <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
-                                        <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
-                                        <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
-                                    </div>
-                                </div>
-                            <% }) %>
-                        </div>
+                            <div class="menu gigantes-menu">
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Eternas', pizzas: pizzasData.eternas, precios: pizzasData.precioEternas, filtroTamaño: 'gigante', dividirPrecio: false }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Clásicas', pizzas: pizzasData.clasicas, precios: pizzasData.precioClasicas, filtroTamaño: 'gigante', dividirPrecio: false }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Tradicionales', pizzas: pizzasData.tradicionales, precios: pizzasData.precioTradicionales, filtroTamaño: 'gigante', dividirPrecio: false }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Especiales', pizzas: pizzasData.especiales, precios: pizzasData.precioEspeciales, filtroTamaño: 'gigante', dividirPrecio: false }) %>
+                            </div>
 
-                        <div class="selecPizzaCategoria">
-                            <h3>Tradicionales</h3>
-                            <% pizzasData.tradicionales.forEach(pizza => { %>
-                                <div class="pizzaItem">
-                                    <li><%= pizza.sabor %></li>
-                                    <div class="pizzasSelector">
-                                        <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
-                                        <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
-                                        <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
-                                    </div>
-                                </div>
-                            <% }) %>
-                        </div>
+                            <div class="titleForm">
+                                <h3>Pizzas Gigantes - 2 sabores</h3>
+                                <i class="fas fa-arrow-circle-right toggle-menu" data-menu="gigantes2"></i>
+                            </div>
 
-                        <div class="selecPizzaCategoria">
-                            <h3>Especiales</h3>
-                            <% pizzasData.especiales.forEach(pizza => { %>
-                                <div class="pizzaItem">
-                                    <li><%= pizza.sabor %></li>
-                                    <div class="pizzasSelector">
-                                        <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
-                                        <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
-                                        <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
-                                    </div>
-                                </div>
-                            <% }) %>
-                        </div>
+                            <div class="menu gigantes2-menu">
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Eternas', pizzas: pizzasData.eternas, precios: pizzasData.precioEternas, filtroTamaño: 'gigante', dividirPrecio: true }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Clásicas', pizzas: pizzasData.clasicas, precios: pizzasData.precioClasicas, filtroTamaño: 'gigante', dividirPrecio: true }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Tradicionales', pizzas: pizzasData.tradicionales, precios: pizzasData.precioTradicionales, filtroTamaño: 'gigante', dividirPrecio: true }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Especiales', pizzas: pizzasData.especiales, precios: pizzasData.precioEspeciales, filtroTamaño: 'gigante', dividirPrecio: true }) %>
+                            </div>
+
+                            <div class="titleForm">
+                                <h3>Pizzas Gigantes - 4 sabores</h3>
+                                <i class="fas fa-arrow-circle-right toggle-menu" data-menu="gigantes4"></i>
+                            </div>
+
+                            <div class="menu gigantes4-menu">
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Eternas', pizzas: pizzasData.eternas, precios: pizzasData.precioEternas, filtroTamaño: 'gigante', dividirPrecio: 4 }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Clásicas', pizzas: pizzasData.clasicas, precios: pizzasData.precioClasicas, filtroTamaño: 'gigante', dividirPrecio: 4 }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Tradicionales', pizzas: pizzasData.tradicionales, precios: pizzasData.precioTradicionales, filtroTamaño: 'gigante', dividirPrecio: 4 }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Especiales', pizzas: pizzasData.especiales, precios: pizzasData.precioEspeciales, filtroTamaño: 'gigante', dividirPrecio: 4 }) %>
+                            </div>
+
+                            <div class="titleForm">
+                                <h3>Pizzas Grandes</h3>
+                                <i class="fas fa-arrow-circle-right toggle-menu" data-menu="grandes"></i>
+                            </div>
+
+                            <div class="menu grandes-menu">
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Eternas', pizzas: pizzasData.eternas, precios: pizzasData.precioEternas, filtroTamaño: 'grande', dividirPrecio: false }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Clásicas', pizzas: pizzasData.clasicas, precios: pizzasData.precioClasicas, filtroTamaño: 'grande', dividirPrecio: false }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Tradicionales', pizzas: pizzasData.tradicionales, precios: pizzasData.precioTradicionales, filtroTamaño: 'grande', dividirPrecio: false }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Especiales', pizzas: pizzasData.especiales, precios: pizzasData.precioEspeciales, filtroTamaño: 'grande', dividirPrecio: false }) %>
+                            </div>
+
+                            <div class="titleForm">
+                                <h3>Pizzas Grandes - 2  sabores</h3>
+                                <i class="fas fa-arrow-circle-right toggle-menu" data-menu="grandes2"></i>
+                            </div>
+
+                            <div class="menu grandes2-menu">
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Eternas', pizzas: pizzasData.eternas, precios: pizzasData.precioEternas, filtroTamaño: 'grande', dividirPrecio: true }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Clásicas', pizzas: pizzasData.clasicas, precios: pizzasData.precioClasicas, filtroTamaño: 'grande', dividirPrecio: true }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Tradicionales', pizzas: pizzasData.tradicionales, precios: pizzasData.precioTradicionales, filtroTamaño: 'grande', dividirPrecio: true }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Especiales', pizzas: pizzasData.especiales, precios: pizzasData.precioEspeciales, filtroTamaño: 'grande', dividirPrecio: true }) %>
+                            </div>
+
+                            <div class="titleForm">
+                                <h3>Pizzas Chicas</h3>
+                                <i class="fas fa-arrow-circle-right toggle-menu" data-menu="chicas"></i>
+                            </div>
+
+                            <div class="menu chicas-menu">
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Eternas', pizzas: pizzasData.eternas, precios: pizzasData.precioEternas, filtroTamaño: 'chica', dividirPrecio: false }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Clásicas', pizzas: pizzasData.clasicas, precios: pizzasData.precioClasicas, filtroTamaño: 'chica', dividirPrecio: false }) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Tradicionales', pizzas: pizzasData.tradicionales, precios: pizzasData.precioTradicionales, filtroTamaño: 'chica', dividirPrecio: false}) %>
+                                <%- include('./partials/selecPizzaCategoria.ejs', { tituloCategoria: 'Especiales', pizzas: pizzasData.especiales, precios: pizzasData.precioEspeciales, filtroTamaño: 'chica', dividirPrecio: false }) %>
+                            </div>
+                        </div>                        
 
                     <% } %>
 

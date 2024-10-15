@@ -84,6 +84,10 @@
     margin: 10px 0;
 }
 
+.selecPizzaTamaño h3, .selecPizzaTamaño i {
+    color: var(--verde);
+}
+
 .selecPizzas li {
     list-style: none;
     color: var(--blanco);

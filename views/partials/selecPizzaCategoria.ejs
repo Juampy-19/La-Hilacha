@@ -1,0 +1,16 @@
+<div class="selecPizzaCategoria">
+    <h3><%= tituloCategoria %></h3>
+    <% pizzas.forEach(pizza => { %>
+        <div class="pizzaItem">
+            <li><%= pizza.sabor %></li>
+            <% precios.forEach(precio => { if (precio.TamañoPizza.tamaño === filtroTamaño) { %>
+                <p class="precio">$<%= dividirPrecio ? (precio.precio / (typeof dividirPrecio  === 'number' ? dividirPrecio : 2)) : precio.precio %></p>
+            <% } }) %>
+            <div class="pizzasSelector">
+                <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
+                <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
+                <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
+            </div>
+        </div>
+    <% }) %>
+</div>

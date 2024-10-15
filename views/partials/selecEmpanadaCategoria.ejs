@@ -1,0 +1,15 @@
+<div class="selecEmpanadaCategoria">
+    <h3><%= tituloCategoria %></h3>
+    <% empanadas.forEach(empanada => { %>
+        <div class="empanadaItem">
+            <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
+            <li><%= empanada.sabor %></li>
+            <p class="precio">$<%= precios[0]?.precio %></p>
+            <div class="empanadaSelector">
+                <button type="button" class="decrease" data-sabor="<%= empanada.sabor %>">-</button>
+                <input type="number" class="quantity" name="cantidad_<%= empanada.sabor %>" value="0" min="0">
+                <button type="button" class="increase" data-sabor="<%= empanada.sabor %>">+</button>
+            </div>
+        </div>
+    <% }) %>
+</div>
