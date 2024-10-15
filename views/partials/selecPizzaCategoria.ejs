@@ -2,6 +2,7 @@
     <h3><%= tituloCategoria %></h3>
     <% pizzas.forEach(pizza => { %>
         <div class="pizzaItem">
+            <input type="checkbox" class="pizzaCheckbox" data-sabor="<% pizza.sabor %>">
             <li><%= pizza.sabor %></li>
             <% precios.forEach(precio => { if (precio.TamañoPizza.tamaño === filtroTamaño) { %>
                 <p class="precio">$<%= dividirPrecio ? (precio.precio / (typeof dividirPrecio  === 'number' ? dividirPrecio : 2)) : precio.precio %></p>

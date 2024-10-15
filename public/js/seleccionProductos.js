@@ -17,9 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   })
-
-  document.querySelectorAll('.empanadaItem').forEach(item => {
-    // Función para que al cargar la vista, los  botones se carguen bloqueados hasta activar el checkbox.
+  // Función para que al cargar la vista, los botones se carguen bloqueados hasta activar el checkbox.
+  document.querySelectorAll('.empanadaItem, .pizzaItem').forEach(item => {
     const increaseButton = item.querySelector('.increase')
     const decreaseButton = item.querySelector('.decrease')
     const quantityInput = item.querySelector('.quantity')
@@ -30,13 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
-document.querySelectorAll('.empanadaCheckbox').forEach(checkbox => {
+document.querySelectorAll('.empanadaCheckbox, .pizzaCheckbox').forEach(checkbox => {
   // Función para que al marcar el checkbox active los botones - y +.
   checkbox.addEventListener('change', function () {
-    const empanadaItem = this.closest('.empanadaItem')
-    const increaseButton = empanadaItem.querySelector('.increase')
-    const decreaseButton = empanadaItem.querySelector('.decrease')
-    const quantityInput = empanadaItem.querySelector('.quantity')
+    const item = this.closest('.empanadaItem') || this.closest('.pizzaItem')
+    const increaseButton = item.querySelector('.increase')
+    const decreaseButton = item.querySelector('.decrease')
+    const quantityInput = item.querySelector('.quantity')
 
     if (this.checked) {
       increaseButton.disabled = false
