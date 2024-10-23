@@ -15,7 +15,23 @@ module.exports = {
       })
     } else {
       console.log('Formulario válido: ', req.body)
-      res.redirect('seleccionProductos')
+      res.redirect('confirmarPedido')
     }
+  },
+
+  confirmarPedido: (req, res) => {
+    const { name, phone, street, altura, piso, dpto, message } = req.body
+
+    console.log('Pedido Confirmado: ', req.body)
+
+    res.render('confirmarPedido', {
+      name,
+      phone,
+      street,
+      altura,
+      piso,
+      dpto,
+      message
+    })
   }
 }

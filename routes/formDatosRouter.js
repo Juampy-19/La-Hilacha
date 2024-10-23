@@ -8,4 +8,6 @@ router.get('/FormDatos', validations, formDatosController.formDatos)
 
 router.post('/formDatos', validations, formDatosController.validationFormDatos)
 
+router.post('/confirmarPedido', formDatosController.confirmarPedido)
+
 module.exports = router

@@ -2,7 +2,7 @@
     <h3><%= tituloCategoria %></h3>
     <% empanadas.forEach(empanada => { %>
         <div class="empanadaItem">
-            <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>">
+            <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>" name="empanada_<%= empanada.sabor %>">
             <li><%= empanada.sabor %></li>
             <p class="precio">$<%= precios[0]?.precio %></p>
             <div class="empanadaSelector">

@@ -1,0 +1,16 @@
+.confirmPedido {
+    width: 100%;
+    font-size: 22px;
+    border: 2px solid var(--verde);
+    outline: 5px solid var(--transpVerde);
+    border-radius: 8px;
+    background: var(--transpNegro);
+    padding: 2px;
+}
+
+@media (min-width: 768px) {
+    .confirmPedido {
+        width: 70%;
+        margin: 25px auto;
+    }
+}

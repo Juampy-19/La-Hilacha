@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs') %>
+
+<body>
+
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+        <section class="resumenPedido">
+            <h2>Resumen del pedido</h2>
+
+            <% if (cantidadEmpanadas.length > 0) { %>
+                <h3>Empanadas seleccionadas</h3>
+                <ul>
+                    <% cantidadEmpanadas.forEach(empanada => { %>
+                        <li>Sabor: <%= empanada.sabor %>, Cantidad: <%= empanada.cantidad %></li>
+                    <% }) %>
+                </ul>
+            <% } %>
+
+            <% if (cantidadPizzas.length > 0) { %>
+                <h3>Pizzas seleccionadas</h3>
+                <ul>
+                    <% cantidadPizzas.forEach(pizza => { %>
+                        <li>Sabor: <%= pizza.sabor %>, Cantidad: <%= pizza.cantidad %></li>
+                    <% }) %>
+                </ul>
+            <% } %>
+
+            <div class="buttonContinuar">
+                <form action="/formDatos" method="GET">
+                    <button class="button" type="submit">Continuar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+    
+</body>
+</html>

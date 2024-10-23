@@ -74,3 +74,27 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 })
+
+// Función para gestionar el pedido.
+const productosSeleccionados = []
+
+document.querySelectorAll('.menu input[type="number"]').forEach(input => {
+  input.addEventListener('change', (e) => {
+    const productoId = e.target.name.split('_')[1]
+    const cantidad = parseInt(e.target.value)
+
+    if (cantidad > 0) {
+      productosSeleccionados.push({ productoId, cantidad })
+    } else {
+      const index = productosSeleccionados.findIndex(p => p.productoId === productoId)
+      if (index > -1) {
+        productosSeleccionados.splice(index, 1)
+      }
+    }
+    actualizarCarrito()
+  })
+})
+
+function actualizarCarrito () {
+  console.log(productosSeleccionados)
+}

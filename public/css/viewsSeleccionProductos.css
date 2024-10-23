@@ -84,6 +84,14 @@
     margin: 10px 0;
 }
 
+.selecPizzaTamaño {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
 .selecPizzaTamaño h3, .selecPizzaTamaño i {
     color: var(--verde);
 }
@@ -103,6 +111,11 @@
     gap: 15px;
 }
 
+form .button {
+    display: flex;
+    margin: 20px auto;
+}
+
 /* Para Chrome, Safari, Edge y Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -113,4 +126,11 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Para Firefox */
 input[type="number"] {
     appearance: textfield;
+}
+
+@media (min-width: 768px) {
+    .pedido {
+        width: 70%;
+        margin: 25px auto;
+    }
 }

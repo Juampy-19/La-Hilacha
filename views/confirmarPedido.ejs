@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs') %>
+
+<body>
+
+    <%- include('./partials/header.ejs') %>
+    
+    <main>
+        <section class="confirmPedido">
+            <h2>Pedido confirmado</h2>
+
+            <!-- Mostrar datos del cliente -->
+            <h3>Datos del cliente</h3>
+            <p>Nombre: <%= name %></p>
+            <p>Teléfono: <%= phone %></p>
+            <p>Dirección: <%= street %> <%= altura %> - 
+                <% if (!piso) { %>
+                    Piso: -, 
+                <% } else { %>
+                    Piso: <%= piso %>, 
+                <% } %>
+                <% if (!dpto) { %>
+                    Dpto: -
+                <% } else { %>
+                    Dpto: <%= dpto %>
+                <% } %>
+            </p>
+            <% if (!message) { %>
+                <p>Mensaje adicional: -</p>
+            <% } else { %>
+                <p>Mensaje adicional: <%= message %></p>
+            <% } %>
+
+            <!-- Mostrar los productos seleccionados -->
+            <h3>Productos seleccionados</h3>
+            <ul>
+                
+            </ul>
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+</html>

@@ -14,7 +14,7 @@
 
             <ul id="errorsFormDatos"></ul>
 
-            <form action="/formDatos" method="POST">
+            <form action="/ConfirmarPedido" method="POST">
                 <div class="name">
                     <label> Nombre:</label>
                     <input type="text" name="name" placeholder="Nombre" value="<%= locals.oldData && !locals.errors.name ? locals.oldData.name : '' %>">
@@ -60,8 +60,8 @@
                     <textarea name="message" cols="60" rows="2" placeholder="Mensaje"></textarea>
                 </div>
 
-                <div class="buttonContinuar">
-                    <button class="button" type="submit">Continuar</button>
+                <div class="buttonConfirmPedido">
+                    <button class="button" type="submit">Confirmar pedido</button>
                 </div>
             </form>
         </section>
