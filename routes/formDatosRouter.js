@@ -6,8 +6,21 @@ const formDatosController = require('../controllers/formDatosController.js')
 
 router.get('/FormDatos', validations, formDatosController.formDatos)
 
-router.post('/formDatos', validations, formDatosController.validationFormDatos)
+router.post('/confirmarPedido', validations, formDatosController.validationFormDatos)
 
-router.post('/confirmarPedido', formDatosController.confirmarPedido)
+router.get('/confirmarPedido', formDatosController.confirmarPedido)
+
+// Ruta para eliminar las sessions.
+router.get('/limpiarSessions', (req, res) => {
+  // Destruir las sessions.
+  req.session.destroy(err => {
+    if (err) {
+      console.log(err)
+      res.redirect('/confirmarPedido')
+    }
+    // Redirigir a la home luego de borrar las sessions.
+    res.redirect('/')
+  })
+})
 
 module.exports = router

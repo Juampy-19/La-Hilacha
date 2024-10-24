@@ -14,15 +14,21 @@ module.exports = {
         oldData: req.body
       })
     } else {
-      console.log('Formulario válido: ', req.body)
+      // Almaceno los datos del cliente en la session.
+      req.session.datosCliente = req.body
+      console.log('Formulario válido: ', req.session.datosCliente)
       res.redirect('confirmarPedido')
     }
   },
 
   confirmarPedido: (req, res) => {
-    const { name, phone, street, altura, piso, dpto, message } = req.body
+    // Obtendo los datos del cliente guardados en la session.
+    const { name, phone, street, altura, piso, dpto, message } = req.session.datosCliente
 
-    console.log('Pedido Confirmado: ', req.body)
+    // Obtengo los productos seleccionados guardados en la session.
+    const { cantidadEmpanadas, cantidadPizzas } = req.session.productosSeleccionados
+
+    console.log('Pedido Confirmado: ', req.session.datosCliente, req.session.productosSeleccionados)
 
     res.render('confirmarPedido', {
       name,
@@ -31,7 +37,9 @@ module.exports = {
       altura,
       piso,
       dpto,
-      message
+      message,
+      cantidadEmpanadas,
+      cantidadPizzas
     })
   }
 }

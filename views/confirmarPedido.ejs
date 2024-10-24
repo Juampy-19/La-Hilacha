@@ -15,11 +15,11 @@
             <h3>Datos del cliente</h3>
             <p>Nombre: <%= name %></p>
             <p>Teléfono: <%= phone %></p>
-            <p>Dirección: <%= street %> <%= altura %> - 
+            <p>Dirección: <%= street %> <%= altura %>
                 <% if (!piso) { %>
-                    Piso: -, 
+                    Piso: -
                 <% } else { %>
-                    Piso: <%= piso %>, 
+                    Piso: <%= piso %>
                 <% } %>
                 <% if (!dpto) { %>
                     Dpto: -
@@ -35,9 +35,27 @@
 
             <!-- Mostrar los productos seleccionados -->
             <h3>Productos seleccionados</h3>
-            <ul>
-                
-            </ul>
+            <% if (cantidadEmpanadas.length > 0) { %>
+                <h4>Empanadas seleccionadas</h4>
+                <ul>
+                    <% cantidadEmpanadas.forEach(empanada => { %>
+                        <li>Sabor: <%= empanada.sabor %>, Cantidad: <%= empanada.cantidad %></li>
+                    <% }) %>
+                </ul>
+            <% } %>
+
+            <% if (cantidadPizzas.length > 0) { %>
+                <h4>Pizzas seleccionadas</h4>
+                <ul>
+                    <% cantidadPizzas.forEach(pizza => { %>
+                        <li>Sabor: <%= pizza.sabor %>, Cantidad: <%= pizza.cantidad %></li>
+                    <% }) %>
+                </ul>
+            <% } %>
+
+            <form action="/limpiarSessions" method="GET">
+                <button class="button">Volver al inicio</button>
+            </form>
         </section>
 
     </main>

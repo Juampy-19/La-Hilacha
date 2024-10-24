@@ -10,14 +10,14 @@ module.exports = {
   },
 
   resumenCarrito: async (req, res) => {
-    // Capturo los datos enviados del formulario
+    // Capturo los datos enviados del formulario.
     const productosSeleccionados = req.body
 
     if (!productosSeleccionados || Object.keys(productosSeleccionados).length === 0) {
       console.log('No se seleccionó ningun producto')
       return res.redirect('seleccionProductos')
     } else {
-      // Filtro las empanadas seleccionadas
+      // Filtro las empanadas seleccionadas.
       const empanadasSeleccionadas = Object.keys(productosSeleccionados).filter(key => key.startsWith('empanada_'))
       const cantidadEmpanadas = empanadasSeleccionadas.map(emp => {
         const sabor = emp.replace('empanada_', '')
@@ -25,7 +25,7 @@ module.exports = {
         return { sabor, cantidad }
       })
 
-      // Filtro las pizzas seleccionadas
+      // Filtro las pizzas seleccionadas.
       const pizzasSeleccionadas = Object.keys(productosSeleccionados).filter(key => key.startsWith('pizza_'))
       const cantidadPizzas = pizzasSeleccionadas.map(pizza => {
         const sabor = pizza.replace('pizza_', '')
@@ -33,7 +33,14 @@ module.exports = {
         return { sabor, cantidad }
       })
 
-      console.log('Datos del formulario: ', productosSeleccionados)
+      // Almaceno productos seleccionados en la session.
+      req.session.productosSeleccionados = {
+        cantidadEmpanadas,
+        cantidadPizzas
+      }
+
+      // Redirección a la vista de resumen del pedido.
+      console.log('Datos del pedido: ', req.session.productosSeleccionados)
       res.render('resumenPedido', { cantidadEmpanadas, cantidadPizzas })
     }
   }
