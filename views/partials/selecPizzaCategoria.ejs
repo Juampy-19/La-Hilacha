@@ -1,15 +1,20 @@
 <div class="selecPizzaCategoria">
     <h3><%= tituloCategoria %></h3>
-    <% pizzas.forEach(pizza => { %>
+    <% pizzas.forEach((pizza) => { %>
         <div class="pizzaItem">
-            <input type="checkbox" class="pizzaCheckbox" data-sabor="<%= pizza.sabor %>" name="pizza_<%= pizza.sabor %>">
+            <% 
+                const precioEncontrado = precios.find(precio => precio.TamañoPizza.tamaño === filtroTamaño)
+                const precioFinal = dividirPrecio ? (precioEncontrado.precio / (typeof dividirPrecio === 'number' ? dividirPrecio : 2)) : precioEncontrado.precio
+            %>
+            <input type="checkbox" class="pizzaCheckbox" data-sabor="<%= pizza.sabor %>" name="pizza_<%= pizza.sabor %>_<%= filtroTamaño %>_<%= precioFinal %>">
+            <!-- <input type="hidden" name="productos[]" value='<%= JSON.stringify({ tipo: "pizza", sabor: pizza.sabor, precio: precioFinal, tamaño: filtroTamaño, cantidad: 0 }) %>' /> -->
             <li><%= pizza.sabor %></li>
-            <% precios.forEach(precio => { if (precio.TamañoPizza.tamaño === filtroTamaño) { %>
-                <p class="precio">$<%= dividirPrecio ? (precio.precio / (typeof dividirPrecio  === 'number' ? dividirPrecio : 2)) : precio.precio %></p>
-            <% } }) %>
+            <p class="precio" data-sabor="<%= pizza.sabor %>">$<%= precioFinal %></p>
+            <input type="hidden" name="precioPizza_<%= pizza.sabor %>_<%= precioFinal %>" value="<%= precioFinal %>">
+
             <div class="pizzasSelector">
                 <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
-                <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="0">
+                <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="1">
                 <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
             </div>
         </div>

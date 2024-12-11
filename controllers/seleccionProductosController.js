@@ -11,37 +11,51 @@ module.exports = {
 
   resumenCarrito: async (req, res) => {
     // Capturo los datos enviados del formulario.
-    const productosSeleccionados = req.body
+    const formData = req.body
 
-    if (!productosSeleccionados || Object.keys(productosSeleccionados).length === 0) {
-      console.log('No se seleccionó ningun producto')
-      return res.redirect('seleccionProductos')
-    } else {
-      // Filtro las empanadas seleccionadas.
-      const empanadasSeleccionadas = Object.keys(productosSeleccionados).filter(key => key.startsWith('empanada_'))
-      const cantidadEmpanadas = empanadasSeleccionadas.map(emp => {
-        const sabor = emp.replace('empanada_', '')
-        const cantidad = productosSeleccionados[`cantidad_${sabor}`]
-        return { sabor, cantidad }
-      })
+    // Creo un array para almacenar los productos seleccionados.
+    const productosSeleccionados = []
 
-      // Filtro las pizzas seleccionadas.
-      const pizzasSeleccionadas = Object.keys(productosSeleccionados).filter(key => key.startsWith('pizza_'))
-      const cantidadPizzas = pizzasSeleccionadas.map(pizza => {
-        const sabor = pizza.replace('pizza_', '')
-        const cantidad = productosSeleccionados[`cantidad_${sabor}`]
-        return { sabor, cantidad }
-      })
-
-      // Almaceno productos seleccionados en la session.
-      req.session.productosSeleccionados = {
-        cantidadEmpanadas,
-        cantidadPizzas
+    // Función auxiliar para crear un objeto de producto.
+    const productCreate = (tipo, sabor, precio, cantidad) => {
+      return {
+        tipo,
+        sabor,
+        precio,
+        cantidad,
+        subtotal: precio * cantidad
       }
-
-      // Redirección a la vista de resumen del pedido.
-      console.log('Datos del pedido: ', req.session.productosSeleccionados)
-      res.render('resumenPedido', { cantidadEmpanadas, cantidadPizzas })
     }
+
+    // Itero sobre los datos del formulario y agrego los productos.
+    for (const key in formData) {
+      if (key.startsWith('empanada_') && formData[key] === 'on') {
+        const sabor = key.split('_')[1]
+        const precio = parseInt(formData[`precioEmpanada_${sabor}`] || 0)
+        const cantidad = parseInt(formData[`cantidad_${sabor}`] || 0)
+        productosSeleccionados.push(productCreate('empanada', sabor, precio, cantidad))
+      } else if (key.startsWith('pizza_') && formData[key] === 'on') {
+        const sabor = key.split('_')[1]
+        // const filtroTamaño = key.split('_')[2]
+        const precioFinal = key.split('_')[3]
+        const precio = parseInt(formData[`precioPizza_${sabor}_${precioFinal}`] || 0)
+        const cantidad = parseInt(formData[`cantidad_${sabor}`] || 0)
+        productosSeleccionados.push(productCreate('pizza', sabor, precio, cantidad))
+      }
+    }
+
+    // Calculo el total de los productos seleccionados.
+    const totalSeleccionado = productosSeleccionados.reduce((acc, producto) => acc + producto.subtotal, 0)
+
+    // Almaceno en las sessions.
+    req.session.productosSeleccionados = productosSeleccionados
+    req.session.totalSeleccionado = totalSeleccionado
+
+    // Redirección a la vista de resumen del pedido.
+    console.log('Datos del pedido: ', req.session.productosSeleccionados, req.session.totalSeleccionado)
+    // console.log('Productos seleccionados: ', productosSeleccionados)
+    // console.log('Total seleccionado: ', totalSeleccionado)
+    // console.log('Req.body: ', req.body)
+    res.render('resumenPedido', { productosSeleccionados, totalSeleccionado })
   }
 }

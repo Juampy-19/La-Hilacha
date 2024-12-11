@@ -26,7 +26,8 @@ module.exports = {
     const { name, phone, street, altura, piso, dpto, message } = req.session.datosCliente
 
     // Obtengo los productos seleccionados guardados en la session.
-    const { cantidadEmpanadas, cantidadPizzas } = req.session.productosSeleccionados
+    const productosSeleccionados = req.session.productosSeleccionados
+    const totalSeleccionado = req.session.totalSeleccionado
 
     console.log('Pedido Confirmado: ', req.session.datosCliente, req.session.productosSeleccionados)
 
@@ -38,8 +39,8 @@ module.exports = {
       piso,
       dpto,
       message,
-      cantidadEmpanadas,
-      cantidadPizzas
+      productosSeleccionados,
+      totalSeleccionado
     })
   }
 }

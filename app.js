@@ -1,7 +1,7 @@
 const express = require('express')
 const session = require('express-session')
 const app = express()
-const validationFormDatos = require('./middlewares/validationFormDatos.js')
+// const validationFormDatos = require('./middlewares/validationFormDatos.js')
 
 // Llamando a las rutas.
 const homeRoute = require('./routes/homeRouter.js')
@@ -15,13 +15,13 @@ app.use(session({
   secret: 'secret',
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false }
+  cookie: { secure: false } // Cambiar a true en producción con HTTPS.
 }))
 
 // Recursos estaticos.
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
-app.use(validationFormDatos)
+// app.use(validationFormDatos)
 
 // Template engine.
 app.set('view engine', 'ejs')
