@@ -8,6 +8,10 @@
     padding: 2px;
 }
 
+.productSelected {
+    color: var(--blanco);
+}
+
 @media (min-width: 768px) {
     .resumenPedido {
         width: 70%;

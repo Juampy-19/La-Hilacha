@@ -9,7 +9,7 @@
             <input type="checkbox" class="pizzaCheckbox" data-sabor="<%= pizza.sabor %>" name="pizza_<%= pizza.sabor %>_<%= filtroTamaño %>_<%= precioFinal %>">
             <!-- <input type="hidden" name="productos[]" value='<%= JSON.stringify({ tipo: "pizza", sabor: pizza.sabor, precio: precioFinal, tamaño: filtroTamaño, cantidad: 0 }) %>' /> -->
             <input type="hidden" name="tamañoPizza_<%= pizza.sabor %>_<%= filtroTamaño %>_<%= precioFinal %>" value="<%= filtroTamaño %>">
-            <li><%= pizza.sabor %></li>
+            <p class="sabor"><%= pizza.sabor %></p> <!-- cambiar los li por p, y borrar lo comentado arriba -->
             <p class="precio" data-sabor="<%= pizza.sabor %>">$<%= precioFinal %></p>
             <input type="hidden" name="precioPizza_<%= pizza.sabor %>_<%= precioFinal %>" value="<%= precioFinal %>">
 

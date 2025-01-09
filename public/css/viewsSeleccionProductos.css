@@ -16,8 +16,7 @@
     margin: 10px 0;
 }
 
-.selecEmpanadas li {
-    list-style: none;
+.sabor {
     color: var(--blanco);
 }
 

@@ -4,7 +4,7 @@
         <div class="empanadaItem">
             <input type="checkbox" class="empanadaCheckbox" data-sabor="<%= empanada.sabor %>" name="empanada_<%= empanada.sabor %>">
             <!-- <input type="hidden" name="productos[]" value='<%= JSON.stringify({ tipo: "empanada", sabor: empanada.sabor, precio: precios[0]?.precio, cantidad: 0 }) %>' /> -->
-            <li><%= empanada.sabor %></li>
+            <p class="sabor"><%= empanada.sabor %></p> <!-- cambiar los li por p, y borrar lo comentado arriba -->
             <p class="precio" data-sabor="<%= empanada.sabor %>">$<%= precios[0]?.precio %></p>
             <input type="hidden" name="precioEmpanada_<%= empanada.sabor %>" value="<%= precios[0]?.precio %>">
             <div class="empanadaSelector">
