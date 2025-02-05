@@ -5,19 +5,24 @@
             <% 
                 const precioEncontrado = precios.find(precio => precio.TamañoPizza.tamaño === filtroTamaño)
                 const precioFinal = dividirPrecio ? (precioEncontrado.precio / (typeof dividirPrecio === 'number' ? dividirPrecio : 2)) : precioEncontrado.precio
+
+                const multiSabor = dividirPrecio !== false
             %>
-            <input type="checkbox" class="pizzaCheckbox" data-sabor="<%= pizza.sabor %>" name="pizza_<%= pizza.sabor %>_<%= filtroTamaño %>_<%= precioFinal %>">
-            <!-- <input type="hidden" name="productos[]" value='<%= JSON.stringify({ tipo: "pizza", sabor: pizza.sabor, precio: precioFinal, tamaño: filtroTamaño, cantidad: 0 }) %>' /> -->
+            <input type="checkbox" class="pizzaCheckbox" data-sabor="<%= pizza.sabor %>" name="pizza_<%= pizza.sabor %>_<%= filtroTamaño %>_<%= precioFinal %>">            
             <input type="hidden" name="tamañoPizza_<%= pizza.sabor %>_<%= filtroTamaño %>_<%= precioFinal %>" value="<%= filtroTamaño %>">
-            <p class="sabor"><%= pizza.sabor %></p> <!-- cambiar los li por p, y borrar lo comentado arriba -->
+            <p class="sabor"><%= pizza.sabor %></p>
             <p class="precio" data-sabor="<%= pizza.sabor %>">$<%= precioFinal %></p>
             <input type="hidden" name="precioPizza_<%= pizza.sabor %>_<%= precioFinal %>" value="<%= precioFinal %>">
 
-            <div class="pizzasSelector">
-                <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
-                <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="1">
-                <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
-            </div>
+            <% if (multiSabor) { %>
+                <input type="hidden" class="quantity" name="cantidad_<%= pizza.sabor %>" value="1">
+            <% } else { %>
+                <div class="pizzasSelector">
+                    <button type="button" class="decrease" data-sabor="<%= pizza.sabor %>">-</button>
+                    <input type="number" class="quantity" name="cantidad_<%= pizza.sabor %>" value="0" min="1">
+                    <button type="button" class="increase" data-sabor="<%= pizza.sabor %>">+</button>
+                </div>
+            <% } %>
         </div>
     <% }) %>
 </div>

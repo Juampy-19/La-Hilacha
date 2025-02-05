@@ -1,100 +1,98 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButtons = document.querySelectorAll('.toggle-menu')
+  const empanadaPizzaItems = document.querySelectorAll('.empanadaItem, .pizzaItem')
+  // const empanadaPizzaCheckboxes = document.querySelectorAll('.empanadaCheckbox, .pizzaCheckbox')
+  const increaseButtons = document.querySelectorAll('.increase')
+  const decreaseButtons = document.querySelectorAll('.decrease')
+  const quantityInputs = document.querySelectorAll('.menu input[type="number"]')
 
-  // Función para hacer el menú desplegable.
+  // Menú desplegable.
   toggleButtons.forEach(button => {
     button.addEventListener('click', function () {
-      const menuType = this.getAttribute('data-menu')
+      const menuType = this.dataset.menu
       const menu = document.querySelector(`.${menuType}-menu`)
-
       menu.classList.toggle('show')
-      if (menu.classList.contains('show')) {
-        this.classList.remove('fa-arrow-circle-right')
-        this.classList.add('fa-arrow-circle-down')
+      this.classList.toggle('fa-arrow-circle-right', !menu.classList.contains('show'))
+      this.classList.toggle('fa-arrow-circle-down', menu.classList.contains('show'))
+    })
+  })
+
+  // Inicialización de botones y checkboxes.
+  empanadaPizzaItems.forEach(item => {
+    const increaseButton = item.querySelector('.increase')
+    const decreaseButton = item.querySelector('.decrease')
+    const quantityInput = item.querySelector('.quantity')
+    const checkbox = item.querySelector('.empanadaCheckbox, .pizzaCheckbox')
+
+    if (checkbox) {
+      increaseButton?.setAttribute('disabled', true)
+      decreaseButton?.setAttribute('disabled', true)
+      quantityInput?.setAttribute('disabled', true)
+    }
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        increaseButton?.removeAttribute('disabled')
+        decreaseButton?.removeAttribute('disabled')
+        quantityInput?.removeAttribute('disabled')
+        quantityInput.value = this.checked ? quantityInput.value || 1 : 0
       } else {
-        this.classList.remove('fa-arrow-circle-down')
-        this.classList.add('fa-arrow-circle-right')
+        increaseButton?.setAttribute('disabled', true)
+        decreaseButton?.setAttribute('disabled', true)
+        quantityInput?.setAttribute('disabled', true)
+        quantityInput.value = 0
       }
     })
   })
-  // Función para que al cargar la vista, los botones se carguen bloqueados hasta activar el checkbox.
-  document.querySelectorAll('.empanadaItem, .pizzaItem').forEach(item => {
-    const increaseButton = item.querySelector('.increase')
-    const decreaseButton = item.querySelector('.decrease')
-    const quantityInput = item.querySelector('.quantity')
 
-    increaseButton.disabled = true
-    decreaseButton.disabled = true
-    quantityInput.disabled = true
-  })
-})
-
-document.querySelectorAll('.empanadaCheckbox, .pizzaCheckbox').forEach(checkbox => {
-  // Función para que al marcar el checkbox active los botones - y +.
-  checkbox.addEventListener('change', function () {
-    const item = this.closest('.empanadaItem') || this.closest('.pizzaItem')
-    const increaseButton = item.querySelector('.increase')
-    const decreaseButton = item.querySelector('.decrease')
-    const quantityInput = item.querySelector('.quantity')
-
-    if (this.checked) {
-      increaseButton.disabled = false
-      decreaseButton.disabled = false
-      quantityInput.disabled = false
-    } else {
-      increaseButton.disabled = true
-      decreaseButton.disabled = true
-      quantityInput.disabled = true
-      quantityInput.value = 0
-    }
-  })
-})
-
-document.addEventListener('DOMContentLoaded', () => {
-  const increaseButtons = document.querySelectorAll('.increase')
-  const decreaseButtons = document.querySelectorAll('.decrease')
-
-  // Función para aumentar la cantidad.
+  // Aumento la cantidad.
   increaseButtons.forEach(button => {
     button.addEventListener('click', function () {
       const input = this.parentNode.querySelector('.quantity')
-      const value = parseInt(input.value)
-      input.value = value + 1
+      input.value = parseInt(input.value) + 1
+      input.dispatchEvent(new Event('change'))
     })
   })
 
-  // Función para disminuir la cantidad.
+  // Disminuyo la cantidad.
   decreaseButtons.forEach(button => {
     button.addEventListener('click', function () {
       const input = this.parentNode.querySelector('.quantity')
       const value = parseInt(input.value)
-      if (value > 0) {
-        input.value = value - 1
-      }
+      input.value = Math.max(0, value - 1)
+      input.dispatchEvent(new Event('change'))
     })
   })
-})
 
-// Función para gestionar el pedido.
-const productosSeleccionados = []
+  // Gentiono el pedido.
+  const productosSeleccionados = []
 
-document.querySelectorAll('.menu input[type="number"]').forEach(input => {
-  input.addEventListener('change', (e) => {
-    const productoId = e.target.name.split('_')[1]
-    const cantidad = parseInt(e.target.value)
+  quantityInputs.forEach(input => {
+    input.addEventListener('change', (e) => {
+      const itemNameParts = e.target.name.split('_')
+      const sabor = itemNameParts[1]
+      const tamaño = itemNameParts[2]
+      const precio = itemNameParts[3]
+      const tipo = e.target.name.startWith('empanada') ? 'empanada' : 'pizza'
+      const cantidad = parseInt(e.target.value)
 
-    if (cantidad > 0) {
-      productosSeleccionados.push({ productoId, cantidad })
-    } else {
-      const index = productosSeleccionados.findIndex(p => p.productoId === productoId)
-      if (index > -1) {
-        productosSeleccionados.splice(index, 1)
+      if (cantidad > 0) {
+        const productoExistente = productosSeleccionados.find(p => p.sabor === sabor && p.tamaño === tamaño && p.precio === precio && p.tipo === tipo)
+        if (productoExistente) {
+          productoExistente.cantidad = cantidad
+        } else {
+          productosSeleccionados.push({ sabor, tamaño, precio, tipo, cantidad })
+        }
+      } else {
+        const index = productosSeleccionados.findIndex(p => p.sabor === sabor && p.tamaño === tamaño && p.precio === precio && p.tipo === tipo)
+        if (index > -1) {
+          productosSeleccionados.splice(index, 1)
+        }
       }
-    }
-    actualizarCarrito()
+      actualizarCarrito()
+    })
   })
-})
 
-function actualizarCarrito () {
-  console.log(productosSeleccionados)
-}
+  function actualizarCarrito () {
+    console.log(productosSeleccionados)
+  }
+})
